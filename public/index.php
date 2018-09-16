@@ -11,7 +11,7 @@ $a =1;
 $b =3;
 $c = $a + $b;
 define('LARAVEL_START', microtime(true));
-
+var_dump(phpinfo());exit;
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
