@@ -7,6 +7,9 @@
  * @author   Taylor Otwell <taylor@laravel.com>
  */
 
+$a =1;
+$b =3;
+$c = $a + $b;
 define('LARAVEL_START', microtime(true));
 
 /*
