@@ -12,7 +12,7 @@ use Mockery\Exception;
 
 class Sender
 {
-    const BUFFER_LEN = 4096;
+    const BUFFER_LEN = 1024;
     private $ip;
     private $port;
     private $socket;
@@ -52,7 +52,6 @@ class Sender
         $handel = fopen($file, "r");
         if ($handel) {
             while (($buffer = fgets($handel, self::BUFFER_LEN)) !== false) {
-                Filter::analyze($buffer);
                 if ($buffer) {
                     fwrite($this->socket, $buffer);
                 }
