@@ -17,7 +17,7 @@ class Home extends Controller
     public function index(Request $request)
     {
         Stream::start();
-        $a = 100000;
+        $a = 50000;
 
         for ($i = 2; $i<$a;$i++)
         {

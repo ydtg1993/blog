@@ -54,7 +54,7 @@ class Sender
             while (($buffer = fgets($handel, self::BUFFER_LEN)) !== false) {
                 Filter::analyze($buffer);
                 if ($buffer) {
-                    fwrite($this->socket, $buffer,self::BUFFER_LEN);
+                    fwrite($this->socket, $buffer);
                 }
             }
 
