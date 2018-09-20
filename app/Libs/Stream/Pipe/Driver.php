@@ -16,7 +16,7 @@ class Driver
 {
     public static function execute()
     {
-        self::sync();
+        self::async();
     }
 
     private static function sync()

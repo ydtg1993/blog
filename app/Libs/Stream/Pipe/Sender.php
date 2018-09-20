@@ -27,14 +27,12 @@ class Sender
 
     public function start()
     {
-        $this->socket = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
+        $create_errno = '';
+        $create_errstr = '';
+        $address = 'udp://'.$this->ip.':'.$this->port;
+        $this->socket = stream_socket_client($address, $create_errno, $create_errstr,STREAM_SERVER_BIND);
         if ($this->socket < 0) {
-            throw new Exception('create socket fail');
-        }
-
-        $result = socket_connect($this->socket, $this->ip, $this->port);
-        if ($result < 0) {
-            throw new Exception('socket connect server fail');
+            throw new Exception('create socket fail:'.$create_errno.$create_errstr);
         }
 
         return $this;
@@ -56,7 +54,7 @@ class Sender
             while (($buffer = fgets($handel, self::BUFFER_LEN)) !== false) {
                 Filter::analyze($buffer);
                 if ($buffer) {
-                    socket_write($this->socket,$buffer,self::BUFFER_LEN);
+                    fwrite($this->socket, $buffer,self::BUFFER_LEN);
                 }
             }
 
