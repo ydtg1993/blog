@@ -16,7 +16,6 @@ class Home extends Controller
 {
     public function index(Request $request)
     {
-        var_dump(phpinfo());exit;
         Stream::start();
         $a = 100000;
 
