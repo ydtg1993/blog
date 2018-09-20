@@ -70,7 +70,7 @@ class Sender
     public function __destruct()
     {
         $this->setBoot();
-        socket_close($this->socket);
+        fclose($this->socket);
     }
 }
 
