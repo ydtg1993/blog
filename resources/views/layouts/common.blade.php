@@ -1,22 +1,35 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@yield('title')</title>
 
-        <title>Laravel</title>
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-        </style>
-    </head>
-    <body>
-    @yield('content')
-    </body>
+    <link rel="stylesheet" href="{{URL::asset('font-awesome/css/font-awesome.min.css')}}">
+    <style>
+        html, body {
+            font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #e8e8e8;
+            color: #636b6f;
+            font-weight: 200;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul{
+            padding: 0;
+        }
+        ul li {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+@yield('content')
+</body>
 </html>
