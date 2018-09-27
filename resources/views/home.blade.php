@@ -87,18 +87,21 @@
             border-spacing: 0;
             list-style: none;
             padding: 0;
-            margin: 0;
-            background: #ffffff
+            margin: 15px 0 0 0;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
         }
 
-        #content .forum_table>li{
+        #content .forum_data > li {
             width: 100%;
             position: relative;
             border-width: 0 0 1px 0;
             border-color: #ebebeb;
         }
 
-        #content .forum_table li:nth-child(even) {
+        #content .forum_data > li:nth-child(even) {
             background: #fafafa;
         }
 
@@ -116,7 +119,24 @@
         .category_chunk {
             padding: 15px 10px 15px 20px;
             min-width: 55px;
-            vertical-align: middle;
+        }
+
+        .theme_chunk{
+            min-width: 380px;
+        }
+
+        .theme_chunk a{
+            color: #33649b;
+            font-size: 18px;
+            line-height: 20px;
+            word-wrap: break-word;
+            font-weight: 400;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .chunk{
+            float: left;
         }
 
         .category_chunk > span {
@@ -129,6 +149,23 @@
             text-align: center;
             font-size: 18px;
             background: #dbdbdb
+        }
+
+        .p_large{
+            color: #353c41;
+            font-size: 22px;
+            font-weight: 300;
+            line-height: 1.3;
+        }
+
+        .p_default{
+            text-align: center;
+            color: #8d9aa6;
+        }
+
+        .cut_text{
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .center {
@@ -177,12 +214,19 @@
                 <ul class="forum_table">
                     <li>
                         <h2 class="column_title">最新更新</h2>
-                        <ul>
+                        <ul class="forum_data">
                             <li>
-                                <div class="category_chunk"><span><i class="fa fa-comments"></i></span></div>
-                                <div class="description_chunk"></div>
-                                <div class="num_chunk"></div>
-                                <div class="author_chunk"></div>
+                                <div class="category_chunk chunk"><span><i class="fa fa-comments"></i></span></div>
+                                <div class="theme_chunk chunk">
+                                    <a href="#" class="cut_text">Java设计模式精讲</a>
+                                    <p class="cut_text">细说java 12种设计模式</p>
+                                </div>
+                                <div class="num_chunk chunk">
+                                    <p class="p_large">3,11</p>
+                                    <p class="p_default">帖子</p>
+                                </div>
+                                <div class="author_chunk chunk"></div>
+                                <div class="clear_both"></div>
                             </li>
 
                             <li>

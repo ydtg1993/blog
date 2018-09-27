@@ -27,6 +27,13 @@
         a {
             text-decoration: none;
         }
+
+        p{
+            line-height: 1.6;
+            color: #353c41;
+            font-size: 13px;
+            margin: 5px 0 5px 0;
+        }
     </style>
 </head>
 <body>
