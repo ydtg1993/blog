@@ -132,6 +132,7 @@
             float: left;
             margin-left: 15px;
             width: 100px;
+            line-height: 15px;
         }
 
         .category_chunk > span {
