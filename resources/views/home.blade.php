@@ -5,7 +5,7 @@
 @section('content')
     <style>
         #head {
-            padding: 0 0 40px 0;
+            padding: 15px 0 40px 0;
             margin: 0 auto;
             background-color: #353c41;
         }
@@ -18,7 +18,7 @@
         #login {
             display: block;
             width: 240px;
-            margin-top: 15px;
+            margin-top: 0;
             float: right;
         }
 
