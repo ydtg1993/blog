@@ -22,11 +22,8 @@
             float: right;
         }
 
-        .clear_both {
-            clear: both;
-        }
-
         #nav {
+            font-family: Helvetica, Arial, sans-serif;
             top: -45px;
             position: relative;
         }
@@ -65,7 +62,7 @@
 
         .nav_list li > a {
             font-size: 13px;
-            padding: 12px 18px 8px;
+            padding: 12px 18px 12px;
             float: left;
             color: rgba(53, 60, 65, 0.6);
         }
@@ -74,12 +71,7 @@
             color: #353c41
         }
 
-        #content section {
-            width: 70%;
-        }
-
         #content .forum_table {
-            width: 100%;
             display: table;
             table-layout: auto;
             position: relative;
@@ -87,11 +79,11 @@
             border-spacing: 0;
             list-style: none;
             padding: 0;
-            margin: 15px 0 0 0;
             background: #ffffff;
             border: 1px solid #e0e0e0;
             box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
             border-radius: 3px;
+            margin: 0 0 15px 0;
         }
 
         #content .forum_data > li {
@@ -117,26 +109,29 @@
         }
 
         .category_chunk {
-            padding: 15px 10px 15px 20px;
+            padding: 15px 10px 15px 15px;
             min-width: 55px;
         }
 
-        .theme_chunk{
-            min-width: 380px;
+        .num_chunk {
+            padding: 5px 0 0 0;
+            min-width: 130px;
+            text-align: center;
         }
 
-        .theme_chunk a{
-            color: #33649b;
-            font-size: 18px;
-            line-height: 20px;
-            word-wrap: break-word;
-            font-weight: 400;
-            margin-top: 10px;
-            display: block;
+        .theme_chunk {
+            width: 450px;
+            padding: 15px 10px 5px 20px;
         }
 
-        .chunk{
+        .author_chunk {
+            padding: 15px 15px 0 15px;
+        }
+
+        .author_chunk > ol {
             float: left;
+            margin-left: 15px;
+            width: 100px;
         }
 
         .category_chunk > span {
@@ -151,27 +146,39 @@
             background: #dbdbdb
         }
 
-        .p_large{
-            color: #353c41;
-            font-size: 22px;
-            font-weight: 300;
-            line-height: 1.3;
+        #menu{
+            padding-left: 20px;
         }
 
-        .p_default{
-            text-align: center;
-            color: #8d9aa6;
+        #menu section {
+            background-color: #ffffff;
+            width: 319px;
         }
 
-        .cut_text{
-            word-wrap: break-word;
-            overflow-wrap: break-word;
+        #menu .forum_data{
+            padding: 10px;
         }
 
-        .center {
-            max-width: 1210px;
-            min-width: 650px;
-            margin: 0 auto;
+        .text_chunk{
+            width: 180px;
+        }
+
+        .forum_data_item{
+            border-width: 0 0 1px 0;
+            border-style: solid;
+            border-color: #ebebeb;
+        }
+
+        .forum_data_item:last-child{
+            border-bottom: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            /* For mobile phones: */
+            [class*="center"] {
+                display: none;
+                width: 100%;
+            }
         }
     </style>
 
@@ -208,8 +215,9 @@
         </div>
     </div>
 
-    <div id="content">
-        <div class="center">
+    <div class="center">
+
+        <div id="content" class="table_cell">
             <section>
                 <ul class="forum_table">
                     <li>
@@ -218,22 +226,68 @@
                             <li>
                                 <div class="category_chunk chunk"><span><i class="fa fa-comments"></i></span></div>
                                 <div class="theme_chunk chunk">
-                                    <a href="#" class="cut_text">Java设计模式精讲</a>
-                                    <p class="cut_text">细说java 12种设计模式</p>
+                                    <a href="#" class="a_title">Java设计模式精讲</a>
+                                    <p>细说java 12种设计模式</p>
                                 </div>
                                 <div class="num_chunk chunk">
                                     <p class="p_large">3,11</p>
                                     <p class="p_default">帖子</p>
                                 </div>
-                                <div class="author_chunk chunk"></div>
+                                <div class="author_chunk chunk">
+                                    <div class="chunk">
+                                        <a href=""><img class="avatar" src="{{URL::asset('img/S.png')}}"></a>
+                                    </div>
+                                    <ol>
+                                        <li><a href="" class="name">name</a></li>
+                                        <li><span>2 分钟前</span></li>
+                                    </ol>
+                                </div>
                                 <div class="clear_both"></div>
                             </li>
 
                             <li>
-                                <div class="category_chunk"><span><i class="fa fa-comments"></i></span></div>
-                                <div class="description_chunk"></div>
-                                <div class="num_chunk"></div>
-                                <div class="author_chunk"></div>
+                                <div class="category_chunk chunk"><span><i class="fa fa-comments"></i></span></div>
+                                <div class="description_chunk chunk"></div>
+                                <div class="num_chunk chunk"></div>
+                                <div class="author_chunk chunk"></div>
+                                <div class="clear_both"></div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="forum_table">
+                    <li>
+                        <h2 class="column_title">最新更新</h2>
+                        <ul class="forum_data">
+                            <li>
+                                <div class="category_chunk chunk"><span><i class="fa fa-comments"></i></span></div>
+                                <div class="theme_chunk chunk">
+                                    <a href="#" class="a_title">Java设计模式精讲</a>
+                                    <p>细说java 12种设计模式</p>
+                                </div>
+                                <div class="num_chunk chunk">
+                                    <p class="p_large">3,11</p>
+                                    <p class="p_default">帖子</p>
+                                </div>
+                                <div class="author_chunk chunk">
+                                    <div class="chunk">
+                                        <a href=""><img class="avatar" src="{{URL::asset('img/S.png')}}"></a>
+                                    </div>
+                                    <ol>
+                                        <li><a href="">name</a></li>
+                                        <li><span>2 分钟前</span></li>
+                                    </ol>
+                                </div>
+                                <div class="clear_both"></div>
+                            </li>
+
+                            <li>
+                                <div class="category_chunk chunk"><span><i class="fa fa-comments"></i></span></div>
+                                <div class="description_chunk chunk"></div>
+                                <div class="num_chunk chunk"></div>
+                                <div class="author_chunk chunk"></div>
+                                <div class="clear_both"></div>
                             </li>
                         </ul>
                     </li>
@@ -242,9 +296,41 @@
 
             <div id="menu"></div>
         </div>
-    </div>
 
-    <div id="boot"></div>
+        <div id="menu" class="table_cell">
+            <section>
+                <ul class="forum_table">
+                    <li>
+                        <h2 class="column_title">最新更新</h2>
+                        <ul class="forum_data">
+                            <li class="forum_data_item">
+                                <div class="category_chunk chunk"><a href=""><img src="{{URL::asset('img/S.png')}}" class="avatar"></a></div>
+                                <div class="text_chunk chunk">
+                                    <ol>
+                                        <li><a href="" class="a_title_small">最新laravel分享</a></li>
+                                        <li><a href="" class="name">name</a></li>
+                                        <li><span>2 分钟前</span></li>
+                                    </ol>
+                                </div>
+                                <p class="tip">5</p>
+                                <div class="clear_both"></div>
+                            </li>
+
+                            <li class="forum_data_item">
+                                <div class="category_chunk chunk"><a href=""><img src="{{URL::asset('img/S.png')}}" class="avatar"></a></div>
+                                <div class="clear_both"></div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <div id="menu"></div>
+        </div>
+
+        <div id="boot"></div>
+
+    </div>
     <script>
 
     </script>
