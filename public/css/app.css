@@ -1,7 +1,9 @@
 #head {
-    padding: 15px 0 40px 0;
+    padding: 20px 0 50px 0;
     margin: 0 auto;
-    background-color: #353c41;
+    background-image: url('http://www.blog.com/img/head.png');
+    background-repeat:no-repeat;
+    background-size:100% 100%;-moz-background-size:100% 100%;
 }
 
 #logo_box {
@@ -18,32 +20,32 @@
 
 #nav {
     font-family: Helvetica, Arial, sans-serif;
-    top: -44px;
-    position: relative;
+    height: 70px;
+    margin-top: -27px;
 }
 
 .nav_title {
-    padding-bottom: 64px;
+    margin: 0;
 }
 
-.nav_title > li {
+.nav_title li {
     display: inline-block;
 }
 
-.nav_title > li > a {
+.nav_title li > a {
     background: rgba(255, 255, 255, 0.04);
     color: rgba(255, 255, 255, 0.7);
-    padding: 9px 25px;
+    padding: 10px 25px;
     border-radius: 2px 2px 0px 0px;
 }
 
-.nav_title > li > a:hover {
+.nav_title li > a:hover {
     background: #ffffff;
     color: #353c41
 }
 
 .nav_list {
-    position: absolute;
+    margin-top: 8px;
     line-height: 15px;
     bottom: 0;
     left: 0;
@@ -162,7 +164,7 @@
 }
 
 .tip_chunk{
-    margin-left: 5px;
+    margin-left: 2px;
     width: 10%;
 }
 
@@ -198,7 +200,8 @@
 @media only screen and (max-width: 1005px) {
     /* For mobile phones: */
     #menu {
-        display: none;
+        width:auto;
+        padding-left: 0;
     }
 
     #content{

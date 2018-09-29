@@ -3,12 +3,14 @@
 @section('title', 'jinono')
 
 @section('content')
-
     <div id="head">
         <div class="center">
             <div id="logo_box">
                 <a href="http://www.jinono.com">
-                    <img src="{{URL::asset('img/jinono.png')}}">
+                    <img src="{{URL::asset('img/jinono.png')}}" style="vertical-align: bottom">
+                    <h1 class="theme">
+                        jinono
+                    </h1>
                 </a>
             </div>
 
@@ -20,26 +22,32 @@
     </div>
 
     <div id="nav">
-        <div class="center">
-            <ul class="nav_title">
+
+        <ul class="nav_title">
+            <div class="center">
                 <li><a href="javascript:void(0);">分享资源</a></li>
                 <li><a href="javascript:void(0);">技术帖子</a></li>
                 <li><a href="javascript:void(0);">关于网站</a></li>
-            </ul>
-            <ul class="nav_list">
-                <div class="center">
-                    <li><a href="javascript:void(0);">前端</a></li>
-                    <li><a href="javascript:void(0);">PHP</a></li>
-                    <li><a href="javascript:void(0);">JAVA</a></li>
-                    <li><a href="javascript:void(0);">IOS</a></li>
-                </div>
-            </ul>
-        </div>
+            </div>
+        </ul>
+        <ul class="nav_list">
+            <div class="center">
+                <li><a href="javascript:void(0);">前端</a></li>
+                <li><a href="javascript:void(0);">PHP</a></li>
+                <li><a href="javascript:void(0);">JAVA</a></li>
+                <li><a href="javascript:void(0);">IOS</a></li>
+            </div>
+        </ul>
     </div>
 
     <div class="center">
-
         <div id="content" class="table_cell">
+            <h1 class="theme">
+                jinono
+            </h1>
+            <span>
+                论坛
+            </span>
             <section>
                 <ul class="forum_table">
                     <li>
@@ -126,7 +134,8 @@
                         <h2 class="column_title">最新更新</h2>
                         <ul class="forum_data">
                             <li class="forum_data_item">
-                                <div class="category_chunk chunk"><a href=""><img src="{{URL::asset('img/S.png')}}" class="avatar"></a></div>
+                                <div class="category_chunk chunk"><a href=""><img src="{{URL::asset('img/S.png')}}"
+                                                                                  class="avatar"></a></div>
                                 <div class="text_chunk chunk">
                                     <ol>
                                         <li><a href="" class="a_title_small">最新laravel分享</a></li>
@@ -134,12 +143,13 @@
                                         <li><span>2 分钟前</span></li>
                                     </ol>
                                 </div>
-                                <div class="tip_chunk chunk"><p class="tip">5</p></div>
+                                <div class="tip_chunk chunk"><p class="tip">15</p></div>
                                 <div class="clear_both"></div>
                             </li>
 
                             <li class="forum_data_item">
-                                <div class="category_chunk chunk"><a href=""><img src="{{URL::asset('img/S.png')}}" class="avatar"></a></div>
+                                <div class="category_chunk chunk"><a href=""><img src="{{URL::asset('img/S.png')}}"
+                                                                                  class="avatar"></a></div>
                                 <div class="clear_both"></div>
                             </li>
                         </ul>
@@ -153,6 +163,13 @@
         <div id="boot"></div>
 
     </div>
+    {{--<div>
+        <div id="js-animation" style="opacity: 1;background-color: #171515">
+            <div>
+                <canvas style="display: block; background-color: rgb(22, 22, 22);"></canvas>
+            </div>
+        </div>
+    </div>--}}
     <script>
 
     </script>

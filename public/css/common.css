@@ -101,6 +101,16 @@ span{
     margin: 0 auto;
 }
 
+h1{
+    font-family: "Pictorial";
+    font-weight: normal;
+    margin: 0 0 0 0.2em;
+    padding: 0;
+    font-size: 6em;
+    display: inline-block;
+    color: #000000;
+}
+
 .tip{
     padding: 5px 10px;
     border-radius: 3px;
