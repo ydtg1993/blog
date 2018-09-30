@@ -118,7 +118,7 @@
 }
 
 .author_chunk {
-    width: 15%;
+    width: 14%;
     padding: 15px 15px 0 15px;
 }
 
@@ -226,6 +226,27 @@
 
 #detail_content .author_chunk img{
     margin: 10px 0 10px 0;
+}
+
+#detail_content .release_content_chunk{
+    min-height: 280px;
+    padding: 20px 0 20px 0;
+    width: 75%;
+}
+
+#detail_content .release_content{
+    min-height: 220px;
+    padding-bottom: 20px;
+}
+
+#detail_content .release_content_bottom{
+    border-top: 1px solid rgba(0,0,0,0.075);
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+#detail_content .relay_comment{
+    background-color: #ffffff96;
 }
 
 @media only screen and (max-width: 1210px){
