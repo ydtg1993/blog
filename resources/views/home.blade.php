@@ -3,46 +3,10 @@
 @section('title', 'jinono')
 
 @section('content')
-    <div id="head">
-        <div class="center">
-            <div id="logo_box">
-                <a href="http://www.jinono.com">
-                    <img src="{{URL::asset('img/jinono.png')}}" style="vertical-align: bottom">
-                    <h1 class="theme">
-                        jinono
-                    </h1>
-                </a>
-            </div>
-
-            <ul id="login">
-                <li><a href="#"><img src="{{URL::asset('img/github.png')}}"></a></li>
-            </ul>
-            <div class="clear_both"></div>
-        </div>
-    </div>
-
-    <div id="nav">
-
-        <ul class="nav_title">
-            <div class="center">
-                <li><a href="javascript:void(0);">分享资源</a></li>
-                <li><a href="javascript:void(0);">技术帖子</a></li>
-                <li><a href="javascript:void(0);">关于网站</a></li>
-            </div>
-        </ul>
-        <ul class="nav_list">
-            <div class="center">
-                <li><a href="javascript:void(0);">前端</a></li>
-                <li><a href="javascript:void(0);">PHP</a></li>
-                <li><a href="javascript:void(0);">JAVA</a></li>
-                <li><a href="javascript:void(0);">IOS</a></li>
-            </div>
-        </ul>
-    </div>
 
     <div class="center">
         <div id="content" class="table_cell">
-            <h1 class="theme">
+            <h1>
                 jinono
             </h1>
             <span>
@@ -51,12 +15,12 @@
             <section>
                 <ul class="forum_table">
                     <li>
-                        <h2 class="column_title">最新更新</h2>
+                        <h2 class="column_title">推荐分享</h2>
                         <ul class="forum_data">
                             <li>
                                 <div class="category_chunk chunk"><span><i class="fa fa-comments"></i></span></div>
                                 <div class="theme_chunk chunk">
-                                    <a href="#" class="a_title">Java设计模式精讲</a>
+                                    <a href="{{url('detail')}}" class="a_title">Java设计模式精讲</a>
                                     <p>细说java 12种设计模式</p>
                                 </div>
                                 <div class="num_chunk chunk">
@@ -77,9 +41,23 @@
 
                             <li>
                                 <div class="category_chunk chunk"><span><i class="fa fa-comments"></i></span></div>
-                                <div class="description_chunk chunk"></div>
-                                <div class="num_chunk chunk"></div>
-                                <div class="author_chunk chunk"></div>
+                                <div class="theme_chunk chunk">
+                                    <a href="{{url('detail')}}" class="a_title">Java设计模式精讲</a>
+                                    <p>细说java 12种设计模式</p>
+                                </div>
+                                <div class="num_chunk chunk">
+                                    <p class="p_large">3,11</p>
+                                    <p class="p_default">帖子</p>
+                                </div>
+                                <div class="author_chunk chunk">
+                                    <div class="chunk">
+                                        <a href=""><img class="avatar" src="{{URL::asset('img/S.png')}}"></a>
+                                    </div>
+                                    <ol>
+                                        <li><a href="" class="name">name</a></li>
+                                        <li><span>2 分钟前</span></li>
+                                    </ol>
+                                </div>
                                 <div class="clear_both"></div>
                             </li>
                         </ul>
@@ -88,7 +66,7 @@
 
                 <ul class="forum_table">
                     <li>
-                        <h2 class="column_title">最新更新</h2>
+                        <h2 class="column_title">推荐帖子</h2>
                         <ul class="forum_data">
                             <li>
                                 <div class="category_chunk chunk"><span><i class="fa fa-comments"></i></span></div>
@@ -150,6 +128,64 @@
                             <li class="forum_data_item">
                                 <div class="category_chunk chunk"><a href=""><img src="{{URL::asset('img/S.png')}}"
                                                                                   class="avatar"></a></div>
+                                <div class="clear_both"></div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="forum_table">
+                    <li>
+                        <h2 class="column_title">会员统计</h2>
+                        <ul class="forum_data">
+                            <li class="forum_data_item">
+                                <div class="category_chunk chunk"><strong>会员总数</strong></div>
+                                <div class="statistics_chunk chunk">
+                                    <p class="p_large">122</p>
+                                </div>
+                                <div class="clear_both"></div>
+                            </li>
+
+                            <li class="forum_data_item">
+                                <div class="category_chunk chunk"><strong>活动中&nbsp;&nbsp;&nbsp;&nbsp;</strong></div>
+                                <div class="statistics_chunk chunk">
+                                    <p class="p_large">12</p>
+                                </div>
+                                <div class="clear_both"></div>
+                            </li>
+
+                            <li class="forum_data_item">
+                                <div class="category_chunk chunk"><a href=""><img src="{{URL::asset('img/S.png')}}"
+                                                                                  class="avatar_large"></a></div>
+                                <div class="member_text_chunk chunk">
+                                    <ol>
+                                        <li>最新成员<a href="" class="name">name</a>加入</li>
+                                        <li><span>2 分钟前</span></li>
+                                    </ol>
+                                </div>
+                                <div class="clear_both"></div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="forum_table">
+                    <li>
+                        <h2 class="column_title">论坛统计</h2>
+                        <ul class="forum_data">
+                            <li class="forum_data_item">
+                                <div class="category_chunk chunk"><strong>分享资源</strong></div>
+                                <div class="statistics_chunk chunk">
+                                    <p class="p_large">658</p>
+                                </div>
+                                <div class="clear_both"></div>
+                            </li>
+
+                            <li class="forum_data_item">
+                                <div class="category_chunk chunk"><strong>总帖子数</strong></div>
+                                <div class="statistics_chunk chunk">
+                                    <p class="p_large">45</p>
+                                </div>
                                 <div class="clear_both"></div>
                             </li>
                         </ul>

@@ -1,3 +1,4 @@
+/*头部*/
 #head {
     padding: 20px 0 50px 0;
     margin: 0 auto;
@@ -67,31 +68,14 @@
     color: #353c41
 }
 
-#content .forum_table {
-    width: 100%;
-    display: table;
-    table-layout: auto;
-    position: relative;
-    border-collapse: separate;
-    border-spacing: 0;
-    list-style: none;
-    padding: 0;
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
-    margin: 0 0 15px 0;
+/*通用class*/
+.text_chunk{
+    width: 150px;
 }
 
-#content .forum_data > li {
-    width: 100%;
-    position: relative;
-    border-width: 0 0 1px 0;
-    border-color: #ebebeb;
-}
-
-#content .forum_data > li:nth-child(even) {
-    background: #fafafa;
+.tip_chunk{
+    margin-left: 2px;
+    width: 10%;
 }
 
 .column_title {
@@ -103,6 +87,18 @@
     background: #33649b;
     color: #ffffff;
     border-radius: 2px 2px 0px 0px;
+}
+
+.forum_table{
+    background-color: #ffffff;
+    margin-top: 15px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+.forum_table:first-child{
+    margin-top: 0;
 }
 
 .category_chunk {
@@ -145,27 +141,13 @@
     background: #dbdbdb
 }
 
-#menu{
-    width: 25%;
-    padding-left: 20px;
+.statistics_chunk{
+    width: 120px;
+    text-align: right;
 }
 
-#menu section {
-    background-color: #ffffff;
-    width: 100%;
-}
-
-#menu .forum_data{
-    padding: 10px;
-}
-
-.text_chunk{
-    width: 150px;
-}
-
-.tip_chunk{
-    margin-left: 2px;
-    width: 10%;
+.statistics_chunk p{
+    margin-top: 10px;
 }
 
 .forum_data_item{
@@ -176,6 +158,74 @@
 
 .forum_data_item:last-child{
     border-bottom: 0;
+}
+
+.theme{
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 30px 0 15px 0;
+    color: #000;
+}
+
+/*主体内容*/
+#content .forum_table {
+    width: 100%;
+    display: table;
+    table-layout: auto;
+    position: relative;
+    border-collapse: separate;
+    border-spacing: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+#content .forum_data > li {
+    width: 100%;
+    position: relative;
+    border-width: 0 0 1px 0;
+    border-color: #ebebeb;
+}
+
+#content .forum_data > li:nth-child(even) {
+    background: #fafafa;
+}
+
+
+#menu{
+    width: 25%;
+    padding-left: 20px;
+}
+
+#menu section {
+    background-color: #e8e8e8;
+    width: 100%;
+}
+
+#menu .forum_data{
+    padding: 10px;
+}
+
+#menu .forum_data>li{
+    margin-top: 8px;
+}
+
+#menu .forum_data>li:first-child{
+    margin-top: 0;
+}
+
+#menu .member_text_chunk{
+    margin-top: 18px;
+}
+
+/*详情页*/
+#detail_content .author_chunk{
+    text-align: center;
+}
+
+#detail_content .author_chunk img{
+    margin: 10px 0 10px 0;
 }
 
 @media only screen and (max-width: 1210px){
