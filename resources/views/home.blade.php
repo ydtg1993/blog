@@ -197,16 +197,5 @@
         </div>
 
         <div id="boot"></div>
-
     </div>
-    {{--<div>
-        <div id="js-animation" style="opacity: 1;background-color: #171515">
-            <div>
-                <canvas style="display: block; background-color: rgb(22, 22, 22);"></canvas>
-            </div>
-        </div>
-    </div>--}}
-    <script>
-
-    </script>
 @stop
