@@ -20,15 +20,38 @@ ul li {
     list-style-type: none;
 }
 
+.letter_color_default{
+    color: #8d9aa6;
+}
+
+.letter_color_normal{
+    color: #353c41;
+}
+
+.letter_color_skip{
+    color: #33649b;
+}
+
+.letter_color_strong{
+    color: #636b6f;
+}
+
+.letter_color_black{
+    color: #353c41;
+}
+
+.tag_hover_color{
+    background: #3e4148;
+    color: white!important;
+}
+
 a {
     font-size: 13px;
-    color: #33649b;
     text-decoration: none;
 }
 
 p{
     line-height: 1.6;
-    color: #353c41;
     font-size: 13px;
     margin: 5px 0 5px 0;
     word-wrap: break-word;
@@ -38,7 +61,6 @@ p{
 span{
     margin: 0;
     font-size:12px ;
-    color: #8d9aa6;
 }
 
 .table_cell{
@@ -46,22 +68,11 @@ span{
 }
 
 .p_large{
-    color: #353c41;
     font-size: 18px;
     line-height: 1.3;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-.p_default{
-    text-align: center;
-    color: #8d9aa6;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
 }
 
 .a_title{
-    color: #33649b;
     font-size: 18px;
     line-height: 20px;
     word-wrap: break-word;
@@ -69,7 +80,6 @@ span{
 }
 
 .a_title_small{
-    color: #33649b;
     font-size: 14px;
     line-height: 20px;
     word-wrap: break-word;
@@ -96,13 +106,11 @@ span{
 
 .name{
     font-family: Helvetica, Arial, sans-serif;
-    color: #4d8496;
 }
 
 .strong_name{
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
-    color: #64A2AC;
 }
 
 .clear_both {
@@ -175,4 +183,69 @@ h1{
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
+}
+
+.ips_tag{
+    width: 60px;
+    background: #353c41;
+    color: #fff !important;
+    font-size: 10px;
+    vertical-align: middle;
+    line-height: 18px;
+    height: 18px;
+    padding: 0 7px;
+    margin: 0 3px 0 8px;
+    display: block;
+    position: relative;
+    letter-spacing: 0;
+    border-radius: 0px 4px 4px 0;
+}
+
+.ips_tag:before{
+    left: -8px;
+    border-radius: 10px 9px 10px 1px;
+    border-color: transparent transparent #353c41 #353c41;
+    display: block;
+    position: absolute;
+    font-size: 28px;
+    line-height: 30px;
+    overflow: hidden;
+    text-shadow: none;
+    content: '';
+    top: 0;
+    bottom: 0;
+    width: 0px;
+    border-style: solid;
+    border-width: 9px;
+    -webkit-transform: scaleX(0.666667) rotate(45deg);
+    -moz-transform: scaleX(0.666667) rotate(45deg);
+    -ms-transform: scaleX(0.666667) rotate(45deg);
+    -o-transform: scaleX(0.666667) rotate(45deg);
+    transform: scaleX(0.666667) rotate(45deg);
+}
+
+.ips_tag:after{
+    left: -3px;
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    background: #fff;
+    position: absolute;
+    top: 7px;
+}
+
+.ips_tag span{
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ips_tag_bar{
+    float: left;
+    margin: 5px 0 5px 5px;
 }

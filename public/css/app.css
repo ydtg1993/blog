@@ -192,7 +192,7 @@
     background: #fafafa;
 }
 
-
+/*右列菜单*/
 #menu{
     width: 25%;
     padding-left: 20px;
@@ -247,6 +247,55 @@
 
 #detail_content .relay_comment{
     background-color: #ffffff96;
+}
+
+/*菜单列表*/
+#menu_content .forum_data > li:nth-child(even) {
+    background: #fafafa;
+}
+
+#menu_content .num_chunk{
+    padding: 14px 0 0 0;
+}
+
+#menu_content .num_chunk p{
+    margin: 0;
+}
+
+.page_bar{
+    line-height: 1;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.05);
+}
+
+.page_list{
+    padding: 4px 10px 0px 5px;
+    margin: 0;
+    border-radius: 30px;
+    display: inline-block;
+    line-height: 26px;
+    font-size: 11px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.page_button{
+    padding: 0 10px;
+    border-radius: 2px;
+    font-weight: bold;
+    text-align: center;
+    color: #414141;
+    vertical-align: middle;
+    text-decoration: none;
+    float: left;
+    line-height: 26px;
+    font-size: 11px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.page_button:hover{
+    background-color: #f0f0f0;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 1210px){

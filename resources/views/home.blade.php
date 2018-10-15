@@ -20,19 +20,19 @@
                             <li>
                                 <div class="category_chunk chunk"><span><i class="fa fa-comments"></i></span></div>
                                 <div class="theme_chunk chunk">
-                                    <a href="{{url('detail')}}" class="a_title">Java设计模式精讲</a>
-                                    <p>细说java 12种设计模式</p>
+                                    <a href="{{url('detail')}}" class="a_title letter_color_skip">Java设计模式精讲</a>
+                                    <p class="letter_color_default">细说java 12种设计模式</p>
                                 </div>
                                 <div class="num_chunk chunk">
                                     <p class="p_large">3,11</p>
-                                    <p class="p_default">帖子</p>
+                                    <p class="letter_color_default">回帖</p>
                                 </div>
                                 <div class="author_chunk chunk">
                                     <div class="chunk">
                                         <a href=""><img class="avatar" src="{{URL::asset('img/S.png')}}"></a>
                                     </div>
                                     <ol>
-                                        <li><a href="" class="name">name</a></li>
+                                        <li><a href="" class="letter_color_skip">name</a></li>
                                         <li><span>2 分钟前</span></li>
                                     </ol>
                                 </div>
@@ -43,11 +43,11 @@
                                 <div class="category_chunk chunk"><span><i class="fa fa-comments"></i></span></div>
                                 <div class="theme_chunk chunk">
                                     <a href="{{url('detail')}}" class="a_title">Java设计模式精讲</a>
-                                    <p>细说java 12种设计模式</p>
+                                    <p class="letter_color_default">细说java 12种设计模式</p>
                                 </div>
                                 <div class="num_chunk chunk">
                                     <p class="p_large">3,11</p>
-                                    <p class="p_default">帖子</p>
+                                    <p class="letter_color_default">帖子</p>
                                 </div>
                                 <div class="author_chunk chunk">
                                     <div class="chunk">
@@ -116,8 +116,8 @@
                                                                                   class="avatar"></a></div>
                                 <div class="text_chunk chunk">
                                     <ol>
-                                        <li><a href="" class="a_title_small">最新laravel分享</a></li>
-                                        <li><a href="" class="name">name</a></li>
+                                        <li><a href="" class="a_title_small letter_color_skip">最新laravel分享</a></li>
+                                        <li><a href="" class="letter_color_skip">name</a></li>
                                         <li><span>2 分钟前</span></li>
                                     </ol>
                                 </div>

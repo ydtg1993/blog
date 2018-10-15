@@ -13,3 +13,4 @@
 
 Route::get('/', 'Home@index');
 Route::get('/detail', 'Detail@index');
+Route::get('/menu', 'Menu@index');
