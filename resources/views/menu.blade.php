@@ -23,20 +23,25 @@
                                 <li class="page_button">5</li>
                                 <li class="page_button"><a href="">NEXT</a></li>
                                 <li class="page_button"><i class="fa fa-angle-double-right"></i></li>
-                                <li class="page_button">Page 1 of 12 <i class="fa fa-caret-down"></i></li>
+                                <li class="page_button ips_menu_box">Page 1 of 12 <i class="fa fa-caret-down"></i>
+                                    <div class="ips_menu">
+                                        <form accept-charset="utf-8">
+                                            <ul class="ips_menu_form">
+                                                <li>
+                                                    <input type="number" min="1" max="12" placeholder="页数" name="page">
+                                                </li>
+                                                <li>
+                                                    <input type="submit" value="Go">
+                                                </li>
+                                            </ul>
+                                        </form>
+                                    </div>
+                                </li>
                             </ul>
-                            <div class="ips_menu">
-                                <form accept-charset="utf-8">
-                                    <ul class="ips_menu_form">
-                                        <li>
-                                            <input type="number" min="1" max="12" placeholder="页数" name="page">
-                                        </li>
-                                        <li>
-                                            <input type="submit" value="Go">
-                                        </li>
-                                    </ul>
-                                </form>
-                            </div>
+
+                            <ul class="page_list" style="float: right">
+                                <li class="page_button">排序 <i class="fa fa-caret-down"></i></li>
+                            </ul>
                         </div>
                         <ul class="forum_data">
                             <li>
