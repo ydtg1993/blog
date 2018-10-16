@@ -185,6 +185,110 @@ h1{
     -webkit-font-smoothing: antialiased;
 }
 
+/*分页条*/
+.page_bar{
+    line-height: 1;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.05);
+}
+
+.page_list{
+    padding: 4px 10px 0px 5px;
+    margin: 0;
+    border-radius: 30px;
+    display: inline-block;
+    line-height: 26px;
+    font-size: 11px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.page_list>li{
+    float: left;
+}
+
+.page_button{
+    padding: 0 10px;
+    border-radius: 2px;
+    font-weight: bold;
+    text-align: center;
+    color: #414141;
+    vertical-align: middle;
+    text-decoration: none;
+    line-height: 26px;
+    font-size: 11px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.page_button:hover{
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+/*翻页框*/
+.ips_menu{
+    background: #fff;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    z-index: 10000;
+    width: 200px;
+    position: absolute;
+    left: 522px;
+    top: 329px;
+    opacity: 1;
+}
+
+.ips_menu:before{
+    border-color: transparent transparent #ebebeb transparent;
+    left: 50%;
+    margin-left: -16px;
+    margin-top: -1px;
+    bottom: 100%;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px;
+    display: block !important;
+}
+
+.ips_menu:after{
+    border-color: transparent transparent #fff transparent;
+    left: 50%;
+    margin-left: -15px;
+    bottom: 100%;
+    border-width: 15px;
+    z-index: 200;
+}
+
+.ips_menu ul{
+    padding: 10px;
+}
+
+.ips_menu li:first-child{
+    margin-bottom: 15px
+}
+
+.ips_menu input{
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(53, 60, 65, 0.83);
+    border-radius: 3px;
+    width: 100%;
+    padding: 7px;
+    background: #3e4148;
+    color: #ffffff;
+}
+
+.ips_menu li:first-child input{
+    background-color: #ffffff;
+    color:black;
+    width: 91%;
+}
+
+/*标签*/
 .ips_tag{
     width: 60px;
     background: #353c41;

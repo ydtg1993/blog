@@ -2,7 +2,7 @@
 #head {
     padding: 20px 0 50px 0;
     margin: 0 auto;
-    background-image: url('http://www.jinono.com/img/head.PNG');
+    background-image: url('/img/head.PNG');
     background-repeat:no-repeat;
     background-size:100% 100%;-moz-background-size:100% 100%;
 }
@@ -34,8 +34,8 @@
 }
 
 .nav_title li > a {
-    background: rgba(255, 255, 255, 0.04);
-    color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.88);
     padding: 10px 25px;
     border-radius: 2px 2px 0px 0px;
 }
@@ -114,6 +114,11 @@
 
 .theme_chunk {
     width: 50%;
+    padding: 15px 10px 5px 20px;
+}
+
+.big_theme_chunk {
+    width: 60%;
     padding: 15px 10px 5px 20px;
 }
 
@@ -260,42 +265,6 @@
 
 #menu_content .num_chunk p{
     margin: 0;
-}
-
-.page_bar{
-    line-height: 1;
-    background: #ffffff;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    box-shadow: 0px 1px 1px rgba(0,0,0,0.05);
-}
-
-.page_list{
-    padding: 4px 10px 0px 5px;
-    margin: 0;
-    border-radius: 30px;
-    display: inline-block;
-    line-height: 26px;
-    font-size: 11px;
-    -webkit-font-smoothing: antialiased;
-}
-
-.page_button{
-    padding: 0 10px;
-    border-radius: 2px;
-    font-weight: bold;
-    text-align: center;
-    color: #414141;
-    vertical-align: middle;
-    text-decoration: none;
-    float: left;
-    line-height: 26px;
-    font-size: 11px;
-    -webkit-font-smoothing: antialiased;
-}
-
-.page_button:hover{
-    background-color: #f0f0f0;
-    cursor: pointer;
 }
 
 @media only screen and (max-width: 1210px){

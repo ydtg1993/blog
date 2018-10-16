@@ -21,12 +21,26 @@
                                 <li class="page_button">3</li>
                                 <li class="page_button">4</li>
                                 <li class="page_button">5</li>
+                                <li class="page_button"><a href="">NEXT</a></li>
+                                <li class="page_button"><i class="fa fa-angle-double-right"></i></li>
+                                <li class="page_button">Page 1 of 12 <i class="fa fa-caret-down"></i></li>
                             </ul>
+                            <div class="ips_menu">
+                                <form accept-charset="utf-8">
+                                    <ul class="ips_menu_form">
+                                        <li>
+                                            <input type="number" min="1" max="12" placeholder="页数" name="page">
+                                        </li>
+                                        <li>
+                                            <input type="submit" value="Go">
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
                         </div>
                         <ul class="forum_data">
                             <li>
-                                <div class="category_chunk chunk"><span><i class="fa fa-comments"></i></span></div>
-                                <div class="theme_chunk chunk">
+                                <div class="big_theme_chunk chunk">
                                     <a href="{{url('detail')}}" class="a_title letter_color_skip">Java设计模式精讲</a>
                                     <p class="letter_color_default chunk">细说java 12种设计模式
                                     <ul class="ips_tag_bar">
@@ -52,8 +66,7 @@
                             </li>
 
                             <li>
-                                <div class="category_chunk chunk"><span><i class="fa fa-comments"></i></span></div>
-                                <div class="theme_chunk chunk">
+                                <div class="big_theme_chunk chunk">
                                     <a href="{{url('detail')}}" class="a_title letter_color_skip">Java设计模式精讲</a>
                                     <p class="letter_color_default">细说java 12种设计模式</p>
                                 </div>
