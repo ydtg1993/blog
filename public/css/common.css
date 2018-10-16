@@ -231,6 +231,7 @@ h1{
 }
 
 .ips_menu{
+    visibility: hidden;
     background: #fff;
     box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
     border: 1px solid #ddd;
