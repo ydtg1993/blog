@@ -34,17 +34,17 @@
 
     <ul class="nav_title">
         <div class="center">
-            <li><a href="javascript:void(0);">分享资源</a></li>
-            <li><a href="javascript:void(0);">技术帖子</a></li>
-            <li><a href="javascript:void(0);">关于网站</a></li>
+            <li><a href="/menu">分享资源</a></li>
+            <li><a href="/menu">技术帖子</a></li>
+            <li><a href="/menu">关于网站</a></li>
         </div>
     </ul>
     <ul class="nav_list">
         <div class="center">
-            <li><a href="javascript:void(0);">前端</a></li>
-            <li><a href="javascript:void(0);">PHP</a></li>
-            <li><a href="javascript:void(0);">JAVA</a></li>
-            <li><a href="javascript:void(0);">IOS</a></li>
+            <li><a href="/menu">前端</a></li>
+            <li><a href="/menu">PHP</a></li>
+            <li><a href="/menu">JAVA</a></li>
+            <li><a href="/menu">IOS</a></li>
         </div>
     </ul>
 </div>
