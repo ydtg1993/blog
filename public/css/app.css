@@ -267,6 +267,109 @@
     margin: 0;
 }
 
+/*评论块*/
+#comment_content{
+
+}
+
+#comment_content .stream_list{
+    border-left: 3px solid #353c41;
+    margin-left: 20px;
+    list-style: none;
+}
+
+#comment_content .relay{
+    background: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    margin-left: 30px;
+    border: 1px solid #d9d9d9;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+#comment_content .relay:before{
+    border-color: transparent #ffffff transparent transparent;
+    left: -24px;
+    border-width: 12px;
+    top: 7px;
+    z-index: 100;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    pointer-events: none;
+}
+
+#comment_content .relay li{
+    margin-left: 10px;
+    float: left;
+}
+
+#comment_content .relay li:first-child{
+    margin-left: 0;
+}
+
+#comment_content .user_chunk{
+    padding: 5px 0 5px 5px;
+    min-width: 50px;
+}
+#comment_content .content_chunk{
+    width: 85%;
+}
+
+#comment_content .relay .release_content {
+    min-height: 30px;
+    padding-bottom: 10px;
+}
+
+#comment_content .relay .relay_tag{
+    left: -50px;
+    top: 5px;
+    position: absolute;
+    display: block;
+    width: 30px;
+    border-radius: 30px;
+    line-height: 25px;
+    font-size: 15px;
+    text-align: center;
+    background: #fff;
+    z-index: 500;
+    border: 2px solid #353c41;
+}
+
+#comment_content .behavior{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    margin-left: 15px;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+#comment_content .behavior .user_chunk{
+    min-width: 40px;
+}
+
+#comment_content .behavior .message{
+    line-height: 40px;
+    color: #8d9aa6;
+}
+
+#comment_content .behavior:after{
+    left: -22px;
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-radius: 9px;
+    position: absolute;
+    top: 49%;
+    margin-top: -4px;
+    background: #353c41;
+}
+
 @media only screen and (max-width: 1210px){
     .center {
         width: calc(90%);

@@ -59,11 +59,11 @@ p{
 }
 
 .left{
-    float: left;
+    float: left!important;
 }
 
 .right{
-    float: right;
+    float: right!important;
 }
 
 span{
@@ -197,6 +197,10 @@ h1{
 .smooth_list li{
     display: inline-block;
     padding: 0 5px 0 0;
+}
+
+.smooth_list i:hover{
+    cursor: pointer;
 }
 
 /*分页条*/

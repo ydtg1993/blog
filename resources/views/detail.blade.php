@@ -39,13 +39,13 @@
                                         fdsfdsfdsfdsfdsfdsfd
                                     </div>
                                     <div class="release_content_bottom">
-                                         <ul class="smooth_list">
-                                             <li><i class="fa fa-thumbs-o-up"></i></li>
-                                             <li><i class="fa fa-thumbs-o-down"></i></li>
-                                             <li><i class="fa fa-gratipay"></i></li>
-                                             <li><i class="fa fa-share-alt"></i></li>
-                                             <li class="right"><span>2018-10-17 11:35:46</span></li>
-                                         </ul>
+                                        <ul class="smooth_list">
+                                            <li><i class="fa fa-thumbs-o-up"></i></li>
+                                            <li><i class="fa fa-thumbs-o-down"></i></li>
+                                            <li><i class="fa fa-gratipay"></i></li>
+                                            <li><i class="fa fa-share-alt"></i></li>
+                                            <li class="right"><span>2018-10-17 11:35:46</span></li>
+                                        </ul>
                                     </div>
                                 </div>
                                 <div class="clear_both"></div>
@@ -54,6 +54,40 @@
                     </li>
                 </ul>
 
+                <div id="comment_content">
+                    <ul class="stream_list">
+                        <li class="relay">
+                            <div class="user_chunk chunk">
+                                <span class="relay_tag"><i class="fa fa-comment"></i></span>
+                                <a href=""><img class="avatar" src="http://www.blog.com/img/S.png"></a>
+                            </div>
+                            <div class="content_chunk chunk">
+                                <div class="release_content">
+                                    sssssssssssssssss
+                                </div>
+                                <div class="release_content_bottom">
+                                    <ul class="smooth_list">
+                                        <li><i class="fa fa-thumbs-o-up"></i></li>
+                                        <li><i class="fa fa-thumbs-o-down"></i></li>
+                                        <li class="right"><span>2018-10-17 11:35:46</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="clear_both"></div>
+                        </li>
+                        <li class="behavior">
+                            <div class="user_chunk chunk">
+                                <a href=""><img class="avatar" src="http://www.blog.com/img/S.png"></a>
+                            </div>
+                            <div class="content_chunk chunk">
+                                <div class="message">
+                                    hhhhhhhhhh
+                                </div>
+                            </div>
+                            <div class="clear_both"></div>
+                        </li>
+                    </ul>
+                </div>
 
             </section>
         </div>
