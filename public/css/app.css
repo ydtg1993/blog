@@ -370,7 +370,7 @@
 }
 
 #comment_content .behavior:after{
-    left: -22px;
+    left: -21.5px;
     content: '';
     width: 9px;
     height: 9px;
