@@ -56,6 +56,7 @@
 
                 <div id="comment_content">
                     <ul class="stream_list">
+                        <li class="top_tag">评论区</li>
                         <li class="relay">
                             <div class="user_chunk chunk">
                                 <span class="relay_tag"><i class="fa fa-comment"></i></span>

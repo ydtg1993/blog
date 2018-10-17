@@ -272,6 +272,17 @@
 
 }
 
+#comment_content .top_tag{
+    margin-left: -20px;
+    display: inline-block;
+    border-radius: 20px;
+    background: #353c41;
+    color: #fff;
+    line-height: 24px;
+    font-size: 12px;
+    padding: 0 20px;
+}
+
 #comment_content .stream_list{
     border-left: 3px solid #353c41;
     margin-left: 20px;
