@@ -58,6 +58,14 @@ p{
     overflow-wrap: break-word;
 }
 
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
 span{
     margin: 0;
     font-size:12px ;
@@ -183,6 +191,12 @@ h1{
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
+}
+
+/*水平条*/
+.smooth_list li{
+    display: inline-block;
+    padding: 0 5px 0 0;
 }
 
 /*分页条*/

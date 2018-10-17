@@ -39,53 +39,22 @@
                                         fdsfdsfdsfdsfdsfdsfd
                                     </div>
                                     <div class="release_content_bottom">
-
+                                         <ul class="smooth_list">
+                                             <li><i class="fa fa-thumbs-o-up"></i></li>
+                                             <li><i class="fa fa-thumbs-o-down"></i></li>
+                                             <li><i class="fa fa-gratipay"></i></li>
+                                             <li><i class="fa fa-share-alt"></i></li>
+                                             <li class="right"><span>2018-10-17 11:35:46</span></li>
+                                         </ul>
                                     </div>
                                 </div>
-
-
                                 <div class="clear_both"></div>
                             </li>
                         </ul>
                     </li>
                 </ul>
 
-                <ul class="forum_table relay_comment">
-                    <li>
-                        <ul class="forum_data">
-                            <li>
-                                <div class="author_chunk chunk">
-                                    <ol>
-                                        <li><p class="p_large">会员</p></li>
-                                        <li>
-                                            <span class="level_tag"></span>
-                                        </li>
-                                        <li><a href=""><img class="avatar_x_large"
-                                                            src="{{URL::asset('img/S.png')}}"></a></li>
-                                        <li><a href="" class="strong_name">hikki</a></li>
-                                        <li>
-                                            <a href="" title="关注">
-                                                <i class="fa fa-gratipay"></i><strong> 121</strong>
-                                            </a>
-                                        </li>
-                                        <li><p>性别 : 男</p></li>
-                                    </ol>
-                                </div>
-                                <div class="release_content_chunk chunk">
-                                    <div class="release_content">
-                                        fdsfdsfdsfdsfdsfdsfd
-                                    </div>
-                                    <div class="release_content_bottom">
 
-                                    </div>
-                                </div>
-
-
-                                <div class="clear_both"></div>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
             </section>
         </div>
 
