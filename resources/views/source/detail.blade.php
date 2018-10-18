@@ -6,7 +6,7 @@
     <div class="center">
         <div id="detail_content" class="table_cell">
             <div class="theme">
-                {{$info['title']}}
+                细说java 12种设计模式
             </div>
 
             <section>
@@ -24,7 +24,7 @@
                                         </li>
                                         <li><a href=""><img class="avatar_x_large"
                                                             src="{{URL::asset('img/S.png')}}"></a></li>
-                                        <li><a href="" class="strong_name">{{$author['name']}}</a></li>
+                                        <li><a href="" class="strong_name">hikki</a></li>
                                         <li>
                                             <a href="" title="关注">
                                                 <i class="fa fa-gratipay"></i><strong> 121</strong>

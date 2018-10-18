@@ -103,7 +103,6 @@
 
 .category_chunk {
     padding: 15px 10px 15px 15px;
-    min-width: 55px;
 }
 
 .num_chunk {
@@ -114,7 +113,7 @@
 
 .theme_chunk {
     width: 50%;
-    padding: 15px 10px 5px 20px;
+    padding: 15px 10px 5px 15px;
 }
 
 .big_theme_chunk {
@@ -123,7 +122,7 @@
 }
 
 .author_chunk {
-    width: 14%;
+    width: 18%;
     padding: 15px 15px 0 15px;
 }
 

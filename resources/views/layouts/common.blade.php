@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
 
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="{{URL::asset('favicon.ico')}}">
     <link rel="stylesheet" href="{{URL::asset('css/font.css')}}">
     <link rel="stylesheet" href="{{URL::asset('font-awesome/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/common.css')}}">
