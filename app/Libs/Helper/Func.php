@@ -26,9 +26,12 @@ class Func
         }elseif ($differ < 86400){
             $hour = floor($differ / 3600);
             return $hour.' 小时前';
-        }else{
-            $day = floor($differ / 86400);
-            return $day.' 天前';
+        }elseif ($differ < 86400 * 7){
+            $day = floor($differ / 86400 * 7);
+            return $day.' 周前';
+        } elseif($differ < 86400 * 30){
+            $day = floor($differ / 86400 * 30);
+            return $day.' 月前';
         }
     }
 

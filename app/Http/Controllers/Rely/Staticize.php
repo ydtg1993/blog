@@ -12,6 +12,10 @@ namespace App\Http\Controllers\Rely;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+/**
+ * Class Staticize
+ * @package App\Http\Controllers\Rely
+ */
 class Staticize
 {
     const SUFFIX = '.html';

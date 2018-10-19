@@ -17,13 +17,12 @@ class Detail extends Controller
 {
     public function index(Request $request)
     {
-        (new Staticize($this,$request))->get();
         $key = $request->route('key');
         $info = Resource::getInfoWhere(['secret_key'=>$key]);
         $author = User::getInfoWhere(['id'=>$info->author_id]);
 
         $this->data['info'] = $info;
         $this->data['author'] = $author;
-        (new Staticize($this,$request))->make('detail');
+        self::$STATICIZE->make('detail');
     }
 }

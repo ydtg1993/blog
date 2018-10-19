@@ -18,7 +18,6 @@ class Home extends Controller
 {
     public function index(Request $request)
     {
-        (new Staticize($this,$request))->get();
         $course_list = Resource::findListWithUser(['main_type' => Resource::MAIN_TYPE_COURSE], 1, 7);
         $note_list = Resource::findListWithUser(['main_type' => Resource::MAIN_TYPE_NOTE], 1, 7);
 
@@ -28,6 +27,6 @@ class Home extends Controller
         $this->data['note_list'] = $note_list;
         $this->data['recent_list'] = $recent_list;
 
-        (new Staticize($this,$request))->make();
+        self::$STATICIZE->make('home');
     }
 }
