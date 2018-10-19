@@ -9,7 +9,7 @@
 
 define('LARAVEL_START', microtime(true));
 define('TIME',time());
-
+define('PROJECT_ROOT_PATH',__DIR__);
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader

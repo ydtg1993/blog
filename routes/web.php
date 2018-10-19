@@ -12,5 +12,5 @@
 */
 
 Route::get('/', 'Home@index');
-Route::get('/detail/{key}', 'Detail@index');
+Route::get('/detail/{key}/{prefix}', 'Detail@index');
 Route::get('/menu', 'Menu@index');
