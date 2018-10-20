@@ -34,6 +34,8 @@ class Func
             $day = floor($differ / 86400 * 30);
             return $day.' 月前';
         }
+        $day = floor($differ / 86400 * 365);
+        return $day.' 年前';
     }
 
     static function separateNum($num,$total = 10)
