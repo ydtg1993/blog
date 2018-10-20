@@ -34,7 +34,7 @@ class Staticize
         $cm_name = basename($this->request->route()->getActionName());
         $parameters = $this->request->route()->parameters();
 
-        $name = '';
+        $name = 'index';
         if (!empty($parameters)) {
             $name = md5(Func::arrayToString($parameters));
         }
@@ -51,7 +51,7 @@ class Staticize
         $cm_name = basename($this->request->route()->getActionName());
         $parameters = $this->request->route()->parameters();
 
-        $name = '';
+        $name = 'index';
         if (!empty($parameters)) {
             $name = md5(Func::arrayToString($parameters));
         }
