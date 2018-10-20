@@ -19,26 +19,29 @@ class Func
     {
         $time = strtotime($date);
         $differ = TIME - $time;
-        if($differ < 60){
-            return $differ.' 秒前';
-        }elseif ($differ < 3600){
+        if ($differ < 60) {
+            return $differ . ' 秒前';
+        } elseif ($differ < 3600) {
             $minute = floor($differ / 60);
-            return $minute.' 分钟前';
-        }elseif ($differ < 86400){
+            return $minute . ' 分钟前';
+        } elseif ($differ < 86400) {
             $hour = floor($differ / 3600);
-            return $hour.' 小时前';
-        }elseif ($differ < 86400 * 7){
-            $day = floor($differ / 86400 * 7);
-            return $day.' 周前';
-        } elseif($differ < 86400 * 30){
-            $day = floor($differ / 86400 * 30);
-            return $day.' 月前';
+            return $hour . ' 小时前';
+        } elseif ($differ < (86400 * 7)) {
+            $day = floor($differ / 86400);
+            return $day . ' 天前';
+        } elseif ($differ < (86400 * 30)) {
+            $week = floor($differ / (86400 * 7));
+            return $week . ' 周前';
+        } elseif ($differ < (86400 * 365)){
+            $months = floor($differ / (86400 * 30));
+            return $months . ' 月前';
         }
-        $day = floor($differ / 86400 * 365);
-        return $day.' 年前';
+        $year = floor($differ / (86400 * 365));
+        return $year . ' 年前';
     }
 
-    static function separateNum($num,$total = 10)
+    static function separateNum($num, $total = 10)
     {
         return (int)($num % $total);
     }
@@ -46,8 +49,8 @@ class Func
     static function arrayToString(array $array)
     {
         $string = '';
-        foreach ($array as $k=>$v){
-            $string.="$k=$v";
+        foreach ($array as $k => $v) {
+            $string .= "$k=$v";
         }
         return $string;
     }
