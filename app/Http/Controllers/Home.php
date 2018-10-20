@@ -8,15 +8,11 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Http\Controllers\Rely\Staticize;
 use App\Http\Model\Resource;
-use Illuminate\Http\Request;
-use Stream\Stream;
 
 class Home extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $course_list = Resource::findListWithUser(['main_type' => Resource::MAIN_TYPE_COURSE], 1, 7);
         $note_list = Resource::findListWithUser(['main_type' => Resource::MAIN_TYPE_NOTE], 1, 7);

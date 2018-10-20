@@ -10,6 +10,7 @@ namespace App\Http\Controllers\Rely;
 
 
 use App\Http\Controllers\Controller;
+use App\Libs\Helper\Func;
 use Illuminate\Http\Request;
 
 /**
@@ -22,25 +23,22 @@ class Staticize
     protected $OBJ = null;
     protected $request = null;
 
-    public function __construct(Controller $OBJ, Request $request)
+    public function __construct(Controller $OBJ)
     {
         $this->OBJ = $OBJ;
-        $this->request = $request;
+        $this->request = $OBJ::$REQUEST;
     }
 
     public function get()
     {
         $cm_name = basename($this->request->route()->getActionName());
-        $prefix = $this->request->route('prefix');
+        $parameters = $this->request->route()->parameters();
 
-        if (!$cm_name) {
-            $cm_name = 'home';
+        $name = '';
+        if (!empty($parameters)) {
+            $name = md5(Func::arrayToString($parameters));
         }
-
-        if ($prefix) {
-            $prefix = $prefix . DIRECTORY_SEPARATOR;
-        }
-        $file = PROJECT_ROOT_PATH . DIRECTORY_SEPARATOR . 'html' . DIRECTORY_SEPARATOR . $prefix . $cm_name . self::SUFFIX;
+        $file = PROJECT_ROOT_PATH . DIRECTORY_SEPARATOR . 'html' . DIRECTORY_SEPARATOR . $cm_name . DIRECTORY_SEPARATOR . $name . self::SUFFIX;
         if (!is_file($file)) {
             return;
         }
@@ -51,12 +49,13 @@ class Staticize
     public function make($blade = 'home')
     {
         $cm_name = basename($this->request->route()->getActionName());
-        $prefix = $this->request->route('prefix');
+        $parameters = $this->request->route()->parameters();
 
-        if ($prefix) {
-            $prefix = $prefix . DIRECTORY_SEPARATOR;
+        $name = '';
+        if (!empty($parameters)) {
+            $name = md5(Func::arrayToString($parameters));
         }
-        $file = PROJECT_ROOT_PATH . DIRECTORY_SEPARATOR . 'html' . DIRECTORY_SEPARATOR . $prefix . $cm_name . self::SUFFIX;
+        $file = PROJECT_ROOT_PATH . DIRECTORY_SEPARATOR . 'html' . DIRECTORY_SEPARATOR . $cm_name . DIRECTORY_SEPARATOR . $name . self::SUFFIX;
 
         $path = dirname($file);
         if (!is_dir($path)) {

@@ -8,16 +8,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Rely\Staticize;
 use App\Http\Model\Resource;
 use App\Http\Model\User;
-use Illuminate\Http\Request;
 
 class Detail extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $key = $request->route('key');
+        $key = self::$REQUEST->route('key');
         $info = Resource::getInfoWhere(['secret_key'=>$key]);
         $author = User::getInfoWhere(['id'=>$info->author_id]);
 

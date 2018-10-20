@@ -15,7 +15,8 @@ class Func
      * @param $date
      * @return string
      */
-    static function hourglassTime($date){
+    static function hourglassTime($date)
+    {
         $time = strtotime($date);
         $differ = TIME - $time;
         if($differ < 60){
@@ -33,6 +34,20 @@ class Func
             $day = floor($differ / 86400 * 30);
             return $day.' 月前';
         }
+    }
+
+    static function separateNum($num,$total = 10)
+    {
+        return (int)($num % $total);
+    }
+
+    static function arrayToString(array $array)
+    {
+        $string = '';
+        foreach ($array as $k=>$v){
+            $string.="$k=$v";
+        }
+        return $string;
     }
 
 

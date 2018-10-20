@@ -20,9 +20,15 @@ class Controller extends BaseController
      */
     public static $STATICIZE;
 
+    /**
+     * @var Request
+     */
+    public static $REQUEST;
+
     public function __construct(Request $request)
     {
-        self::$STATICIZE = new Staticize($this,$request);
+        self::$REQUEST = $request;
+        self::$STATICIZE = new Staticize($this);
         self::$STATICIZE->get();
     }
 }
