@@ -11,5 +11,8 @@ namespace App\Http\Dao;
 
 class Dao
 {
+    public function __construct()
+    {
 
+    }
 }

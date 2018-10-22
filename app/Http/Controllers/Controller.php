@@ -29,6 +29,6 @@ class Controller extends BaseController
     {
         self::$REQUEST = $request;
         self::$STATICIZE = new Staticize($this);
-        self::$STATICIZE->get();
+        //self::$STATICIZE->get();
     }
 }

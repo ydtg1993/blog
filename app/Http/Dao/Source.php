@@ -9,7 +9,10 @@
 namespace App\Http\Dao;
 
 
-class Source
+class Source extends Dao
 {
+    public function recommendSource()
+    {
 
+    }
 }

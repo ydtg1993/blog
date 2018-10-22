@@ -9,7 +9,10 @@
 namespace App\Http\AdminControllers;
 
 
-class Admin
+class Admin extends Controller
 {
-
+    public function index()
+    {
+        return view('admin/home');
+    }
 }
