@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{URL::asset('font-awesome/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/common.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/app.css')}}">
+
+    <script src="{{URL::asset('js/jquery.min.js')}}"></script>
 </head>
 <body>
 <div id="head">
