@@ -36,12 +36,12 @@ class Admin
         if(!$this->administrator){
             return Redirect::to(ADMIN_URI.'/login');
         }
-        var_dump($this->administrator);exit;
+
         return view('admin/home');
     }
 
     public function login()
     {
-        self::$REQUEST->session()->put('name','hikki');
+        //self::$REQUEST->session()->put('admin','hikki');
     }
 }

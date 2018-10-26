@@ -10,26 +10,16 @@ namespace App\Http\AdminControllers;
 
 
 use HuangYi\Rbac\RbacTrait;
+use Illuminate\Http\Request;
 
-class Auth extends Controller
+class Auth extends Admin
 {
     use RbacTrait;
 
-    public $data = [];
-
-    /**
-     * @var Staticize
-     */
-    public static $STATICIZE;
-
-    /**
-     * @var Request
-     */
-    public static $REQUEST;
-
     public function __construct(Request $request)
     {
-        self::$REQUEST = $request;
+        parent::__construct($request);
+
     }
 
     public function index()
