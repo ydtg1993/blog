@@ -3,17 +3,17 @@
  * Created by PhpStorm.
  * User: Administrator
  * Date: 2018/10/22 0022
- * Time: 下午 4:00
+ * Time: 下午 4:05
  */
 
 namespace App\Http\AdminControllers;
 
-use App\Http\Controllers\Rely\Staticize;
-use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as BaseController;
 
-class Controller extends BaseController
+use HuangYi\Rbac\RbacTrait;
+
+class Auth extends Controller
 {
+    use RbacTrait;
 
     public $data = [];
 
@@ -30,5 +30,20 @@ class Controller extends BaseController
     public function __construct(Request $request)
     {
         self::$REQUEST = $request;
+    }
+
+    public function index()
+    {
+
+    }
+
+    public function addRole()
+    {
+
+    }
+
+    public function upRole()
+    {
+
     }
 }
