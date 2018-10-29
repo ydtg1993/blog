@@ -173,6 +173,11 @@
 }
 
 /*主体内容*/
+#content{
+    width: 75%;
+    float: left;
+}
+
 #content .forum_table {
     width: 100%;
     display: table;
@@ -198,8 +203,9 @@
 
 /*右列菜单*/
 #menu{
-    width: 25%;
-    padding-left: 20px;
+    width: 23%;
+    padding-left: 2%;
+    float: right;
 }
 
 #menu section {
@@ -224,6 +230,11 @@
 }
 
 /*详情页*/
+#detail_content{
+    width: 75%;
+    float: left;
+}
+
 #detail_content .author_chunk{
     text-align: center;
 }
@@ -380,7 +391,7 @@
     background: #353c41;
 }
 
-@media only screen and (max-width: 1210px){
+/*@media only screen and (max-width: 1210px){
     .center {
         width: calc(90%);
         margin: 0 auto;
@@ -400,7 +411,7 @@
 }
 
 @media only screen and (max-width: 1005px) {
-    /* For mobile phones: */
+    !* For mobile phones: *!
     #menu {
         width:auto;
         padding-left: 0;
@@ -417,4 +428,4 @@
     .table_cell{
         display: block;
     }
-}
+}*/

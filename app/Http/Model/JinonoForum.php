@@ -15,12 +15,21 @@ class JinonoForum extends Model
 {
     public $timestamps = false;
 
+    public static function add(array $data)
+    {
+        return self::insertGetId($data);
+    }
 
     public static function findListWhere(array $where = [],$page = 1,$limit = 30,$order_by = 'id',$sort = 'ASC')
     {
         $page-=$page;
         $start = $page * $limit;
         return self::where($where)->offset($start)->limit($limit)->orderBy($order_by, $sort)->get();
+    }
+
+    public static function getAllWhere(array $where = [])
+    {
+        return self::where($where)->get();
     }
 
     /**
@@ -40,5 +49,10 @@ class JinonoForum extends Model
     public static function upInfoWhere(array $data,array $where = [])
     {
         return self::where($where)->update($data);
+    }
+
+    public static function delInfoWhere(array $where)
+    {
+        return self::where($where)->delete();
     }
 }

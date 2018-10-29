@@ -9,3 +9,6 @@ $admin_url = '/'.ADMIN_URI;
 
 Route::get($admin_url, 'Admin@index');
 Route::get($admin_url . '/login', 'Admin@login');
+
+Route::get($admin_url . '/auth/menu', 'Auth@menu');
+Route::post($admin_url . '/auth/upMenu', 'Auth@upMenu');

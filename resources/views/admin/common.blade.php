@@ -6,6 +6,7 @@
     <title>@yield('title')</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <title>jinono后台</title>
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -26,7 +27,7 @@
     <!-- Main Header -->
     <header class="main-header">
 
-        <a href="www.jinono.com" class="logo">
+        <a href="/" class="logo">
             <span class="logo-lg">jinono</span>
         </a>
 
@@ -152,7 +153,7 @@
 
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu" data-widget="tree">
-                <li class="active"><a href="#"><i class="fa fa-link"></i> <span>功能一</span></a></li>
+                <li class="active"><a href="http://www.blog.com/7A57A5A743894A0E/auth"><i class="fa fa-link"></i> <span>功能一</span></a></li>
                 <li><a href="#"><i class="fa fa-link"></i> <span>功能二</span></a></li>
                 <li class="treeview">
                     <a href="#"><i class="fa fa-link"></i> <span>功能三</span>

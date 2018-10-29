@@ -7,6 +7,8 @@
  */
 
 namespace App\Http\AdminControllers;
+
+use App\Http\Common\ResponseCode;
 use App\Http\Controllers\Rely\Staticize;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -25,16 +27,22 @@ class Admin
      */
     public static $REQUEST;
 
+    /**
+     * @var
+     */
+    public static $RESPONSE;
+
     public function __construct(Request $request)
     {
         self::$REQUEST = $request;
+        self::$RESPONSE = ResponseCode::getInstance();
     }
 
     public function index()
     {
         $this->administrator = self::$REQUEST->session()->get('admin');
-        if(!$this->administrator){
-            return Redirect::to(ADMIN_URI.'/login');
+        if (!$this->administrator) {
+            return Redirect::to(ADMIN_URI . '/login');
         }
 
         return view('admin/home');
@@ -42,6 +50,6 @@ class Admin
 
     public function login()
     {
-        //self::$REQUEST->session()->put('admin','hikki');
+        self::$REQUEST->session()->put('admin', 'hikki');
     }
 }
