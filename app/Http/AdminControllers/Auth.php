@@ -40,6 +40,10 @@ class Auth extends Admin
             $object = new \ReflectionClass($class);
 
             $methods = $object->getMethods(\ReflectionMethod::IS_PUBLIC);
+            $traits = $object->getTraits();
+            foreach ($traits as $trait){
+                $m = $trait->getMethods();
+            }
 
             foreach ($methods as $method) {
                 $method_name = $method->getName();
@@ -47,6 +51,7 @@ class Auth extends Admin
                     continue;
                 }
                 $declare_class = $method->getDeclaringClass();
+
                 if($declare_class->name != $class){
                     continue;
                 }
