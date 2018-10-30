@@ -21,8 +21,8 @@ class Resource extends JinonoForum
         $page-=$page;
         $start = $page * $limit;
         return self::where($where)
-            ->join('user','resource.author_id','=','user.id')
-            ->selectRaw('resource.*,user.id,user.name,user.avatar')
+            ->join('users','resource.author_id','=','users.id')
+            ->selectRaw('resource.*,users.id,users.name,users.avatar')
             ->offset($start)->limit($limit)->orderBy($order_by, $sort)->get();
     }
 

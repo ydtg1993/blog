@@ -11,11 +11,7 @@ namespace App\Http\AdminControllers;
 
 use App\Http\Model\Permissions;
 use App\Libs\Helper\Func;
-use HuangYi\Rbac\Models\Permission;
 use HuangYi\Rbac\RbacTrait;
-use Illuminate\Http\Request;
-use phpDocumentor\Reflection\DocBlock\Tags\Var_;
-use phpDocumentor\Reflection\Types\Boolean;
 
 class Auth extends Admin
 {

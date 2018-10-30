@@ -9,9 +9,9 @@
 namespace App\Http\Model;
 
 
-class User extends JinonoForum
+class UserRole extends JinonoForum
 {
-    protected $table = 'users';
+    protected $table = 'user_role';
 
 
 }

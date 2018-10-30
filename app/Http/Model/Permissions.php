@@ -13,5 +13,10 @@ class Permissions extends JinonoForum
 {
     protected $table = 'permissions';
 
-
+    public static function getAllInids(array $where = [],array $ids = [])
+    {
+        return self::where($where)
+            ->whereIn('id',$ids)
+            ->get();
+    }
 }

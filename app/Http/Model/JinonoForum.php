@@ -55,4 +55,6 @@ class JinonoForum extends Model
     {
         return self::where($where)->delete();
     }
+
+
 }

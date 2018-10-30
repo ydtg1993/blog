@@ -124,6 +124,21 @@ class Func
         return $keys;
     }
 
+    static function createToken()
+    {
+        return md5(LARAVEL_START);
+    }
+
+    /**
+     * @param $password
+     * @param $token
+     * @return string
+     */
+    static function packPassword($password,$token)
+    {
+        return md5($password.DIRECTORY_SEPARATOR.$token);
+    }
+
     /**
      * @param $url
      * @param array $vars
