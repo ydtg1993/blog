@@ -5,7 +5,7 @@
  * Date: 2018/10/22 0022
  * Time: 下午 3:55
  */
-$admin_url = '/'.ADMIN_URI;
+$admin_url = '/';
 
 Route::match(['get','post'],$admin_url . '/login', 'Admin@login');
 
