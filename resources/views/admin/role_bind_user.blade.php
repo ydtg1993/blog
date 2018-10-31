@@ -20,7 +20,7 @@
                         <td>{{$user['user_id']}}</td>
                         <td>{{$user['role_id']}}</td>
                         <td>
-                            <a type="button" class="btn btn-default btn-xs">删除</a>
+                            <a type="button" data-usr="{{$user['user_id']}}" class="btn btn-default btn-xs">删除</a>
                         </td>
                     </tr>
                     @endforeach
@@ -47,6 +47,26 @@
                         'role_id': id,
                         'user_id': user_id,
                         'command': 'add',
+                    },
+                    success: function (d) {
+                        if(d.code == 0){
+                            window.location.reload();
+                        }
+                    }
+                });
+            });
+
+            $('.btn').click(function () {
+                var id = $(this).parent().parent().attr('data-id');
+                var user_id = $(this).attr('data-usr');
+                $.ajax({
+                    type: 'POST',
+                    url: '{{url(ADMIN_URI.'/Auth.roleBindUser')}}',
+                    data: {
+                        '_token': '{{csrf_token()}}',
+                        'role_id': id,
+                        'user_id': user_id,
+                        'command': 'del',
                     },
                     success: function (d) {
                         if(d.code == 0){
