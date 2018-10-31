@@ -4,7 +4,7 @@
 
 @section('content')
 
-    @foreach($roles as $role)
+    @foreach($permissions as $permission)
         <div class="box">
             <div class="box-body no-padding">
                 <table class="table table-striped">
@@ -15,7 +15,7 @@
                         <th>操作</th>
                     </tr>
                     <tr>
-                        <td>{{$role['id']}}</td>
+                        <td>{{$permission['id']}}</td>
                         <td>{{$role['name']}}</td>
                         <td>
                             <a href="" type="button" class="btn btn-default btn-xs">绑定用户</a>

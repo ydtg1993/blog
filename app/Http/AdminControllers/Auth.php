@@ -182,6 +182,24 @@ class Auth extends Admin
 
     public function permission()
     {
+        $role_id = self::$REQUEST->route('role_id');
+
+        $permissions = Permissions::getAllWhere(['role_id'=>$role_id]);
+        if($permissions){
+            $permissions= $permissions->toArray();
+        }else{
+            $permissions = [];
+        }
+        $permission_ids = array_column($permissions,'permission_id');
+
+        $permissions = Permissions::getAllInIds([],$permission_ids);
+        if($permissions){
+            $permissions= $permissions->toArray();
+        }else{
+            $permissions = [];
+        }
+
+
         return view('admin/permission', self::$data);
     }
 
