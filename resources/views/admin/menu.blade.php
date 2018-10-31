@@ -4,21 +4,7 @@
 
 @section('content')
 
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                Page Header
-                <small>Optional description</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                <li class="active">Here</li>
-            </ol>
-        </section>
 
-        <!-- Main content -->
-        <section class="content container-fluid">
             @foreach($list as $class_name=>$data)
                 <div class="box" data-id="{{current($data)['id']}}">
                     <div class="box-header">
@@ -43,7 +29,7 @@
                             </tr>
                             @foreach($data as $d)
                                 <tr data-id="{{$d['id']}}">
-                                    <td><input type="text" name="name" class="form-control" value="{{$d['m_name']}}"></td>
+                                    <td><input type="text" name="m_name" class="form-control" value="{{$d['m_name']}}"></td>
                                     <td>{{$d['slug']}}</td>
                                     <td><input type="text" name="description" class="form-control"
                                                value="{{$d['description']}}"></td>
@@ -55,9 +41,6 @@
                     </div>
                 </div>
             @endforeach
-        </section>
-    </div>
-    </div>
 
     <script>
         $('.form-control').blur(function () {

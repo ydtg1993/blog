@@ -10,6 +10,9 @@ namespace App\Http\AdminControllers;
 
 
 use App\Http\Model\Permissions;
+use App\Http\Model\RolePermission;
+use App\Http\Model\Roles;
+use App\Http\Model\UserRole;
 use App\Libs\Helper\Func;
 use HuangYi\Rbac\RbacTrait;
 
@@ -107,7 +110,7 @@ class Auth extends Admin
         }
 
         self::$data['list'] = $list;
-        return view('admin/auth', self::$data);
+        return view('admin/menu', self::$data);
     }
 
     public function upMenu()
@@ -141,7 +144,45 @@ class Auth extends Admin
 
     public function role()
     {
+        $roles = Roles::getAllWhere();
 
+        if($roles){
+            $roles = $roles->toArray();
+        }
+        self::$data['roles'] = $roles;
+        return view('admin/roles', self::$data);
+    }
+
+    public function roleBindUser()
+    {
+        if(self::$REQUEST->ajax()){
+            $role_id = self::$REQUEST->input('role_id');
+            $user_id = self::$REQUEST->input('user_id');
+            $command = self::$REQUEST->input('command');
+            if($command == 'add'){
+                UserRole::add(['role_id'=>$role_id,'user_id'=>$user_id]);
+            }elseif ($command == 'del'){
+                UserRole::delInfoWhere(['role_id'=>$role_id,'user_id'=>$user_id]);
+            }
+
+            return self::$RESPONSE->result(0);
+        }
+
+        $role_id = self::$REQUEST->route('role_id');
+        $users = UserRole::getAllWhere(['role_id'=>$role_id]);
+        if($users){
+            $users = $users->toArray();
+        }else{
+            $users = [];
+        }
+
+        self::$data['users'] = $users;
+        return view('admin/role_bind_user', self::$data);
+    }
+
+    public function permission()
+    {
+        return view('admin/permission', self::$data);
     }
 
 }
