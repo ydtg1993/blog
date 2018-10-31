@@ -107,6 +107,26 @@ class Func
     }
 
     /**
+     * 二维数组分组
+     * @param $array
+     * @param array $keys
+     * @return array
+     */
+    static function group2Array($array,array $keys)
+    {
+        $data = [];
+        foreach ($array as $item){
+            $group_key = '';
+            foreach ($keys as $key){
+                $group_key.= $item[$key].'|';
+            }
+
+            $data[$group_key][] = $item;
+        }
+        return $data;
+    }
+
+    /**
      * 根据值返回所有键
      * @param $array
      * @param $value
@@ -126,7 +146,7 @@ class Func
 
     static function createToken()
     {
-        return md5(LARAVEL_START);
+        return md5(LARAVEL_START.mt_rand(1,50));
     }
 
     /**

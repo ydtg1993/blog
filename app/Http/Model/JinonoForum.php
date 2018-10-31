@@ -51,6 +51,11 @@ class JinonoForum extends Model
         return self::where($where)->update($data);
     }
 
+    public static function upInfoInWhere(array $data,array $where = [],$flied = '')
+    {
+        return self::whereIn($flied,$where)->update($data);
+    }
+
     public static function delInfoWhere(array $where)
     {
         return self::where($where)->delete();

@@ -59,6 +59,9 @@ class RedisDriver
             case 'hash':
                 $this->redis->select(4);
                 break;
+            case 'active':
+                $this->redis->select(14);
+                break;
         }
 
         $cache = (string)self::$config[$name_type][$name_key];

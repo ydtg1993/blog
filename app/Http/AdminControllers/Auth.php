@@ -37,8 +37,13 @@ class Auth extends Admin
 
             $methods = $object->getMethods(\ReflectionMethod::IS_PUBLIC);
             $traits = $object->getTraits();
+
+            $traits_methods = [];
             foreach ($traits as $trait){
-                $m = $trait->getMethods();
+                $trait_methods = $trait->getMethods();
+                foreach ($trait_methods as $traits_method){
+                    $traits_methods[] = $traits_method->name;
+                }
             }
 
             foreach ($methods as $method) {
@@ -52,6 +57,10 @@ class Auth extends Admin
                     continue;
                 }
 
+                if($traits_methods && in_array($method_name,$traits_methods)){
+                    continue;
+                }
+
                 $c_n_name = $class_name . '.' . $method_name;
                 $permission_info_index = Func::multiQuery2ArrayIndex($permission_infos,['slug'=>$c_n_name]);
                 if (is_int($permission_info_index)) {
@@ -59,7 +68,8 @@ class Auth extends Admin
                     $permission_infos[$permission_info_index]['exists'] = true;
                     $data = [
                         'id' => $permission_info['id'],
-                        'name' => $permission_info['name'],
+                        'c_name' => $permission_info['c_name'],
+                        'm_name' => $permission_info['m_name'],
                         'slug' => $permission_info['slug'],
                         'description' => $permission_info['description'],
                         'access' => $permission_info['access'],
@@ -68,7 +78,8 @@ class Auth extends Admin
                 } else {
                     $id = Permissions::add([
                         'controller'=>$class_name,
-                        'name' => $c_n_name,
+                        'c_name' => '',
+                        'm_name' => '',
                         'slug' => $c_n_name,
                         'description' => '',
                         'access' => 0,
@@ -76,7 +87,8 @@ class Auth extends Admin
                     ]);
                     $data = [
                         'id' => $id,
-                        'name' => $c_n_name,
+                        'c_name' => '',
+                        'm_name' => '',
                         'slug' => $c_n_name,
                         'description' => '',
                         'access' => 0,
@@ -94,8 +106,8 @@ class Auth extends Admin
             }
         }
 
-        $this->data['list'] = $list;
-        return view('admin/auth', $this->data);
+        self::$data['list'] = $list;
+        return view('admin/auth', self::$data);
     }
 
     public function upMenu()
@@ -104,8 +116,16 @@ class Auth extends Admin
             $id = self::$REQUEST->input('id');
 
             $data = [];
-            if(self::$REQUEST->has('name')){
-                $data['name'] = self::$REQUEST->input('name');
+            if(self::$REQUEST->has('c_name')){
+                $data['c_name'] = self::$REQUEST->input('c_name');
+                $permission_info = Permissions::getInfoWhere(['id'=>$id]);
+                $permission_infos = Permissions::getAllWhere(['controller'=>$permission_info->controller]);
+                $ids = array_column($permission_infos->toArray(),'id');
+                Permissions::upInfoInWhere($data,$ids,'id');
+                return self::$RESPONSE->result(0);
+            }
+            if(self::$REQUEST->has('m_name')){
+                $data['m_name'] = self::$REQUEST->input('m_name');
             }
             if(self::$REQUEST->has('description')){
                 $data['description'] = self::$REQUEST->input('description');

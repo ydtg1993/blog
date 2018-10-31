@@ -11,7 +11,7 @@ namespace App\Http\AdminControllers;
 use App\Http\Common\RedisDriver;
 use App\Http\Common\ResponseCode;
 use App\Http\Controllers\Rely\Staticize;
-use App\Http\Dao\AdministratorLoginCheck;
+use App\Http\Dao\UserActive;
 use App\Http\Model\User;
 use App\Libs\Helper\Func;
 use Illuminate\Http\Request;
@@ -21,8 +21,9 @@ use Illuminate\Support\Facades\Redirect;
 class Admin
 {
     public static $data = [
-        'administrator',
-        'navigation'
+        'slug'=>'',
+        'user_info'=>[],
+        'navigation'=>[]
     ];
 
     /**
@@ -48,7 +49,7 @@ class Admin
 
     public function index()
     {
-        return view('admin/home');
+        return view('admin/home',self::$data);
     }
 
     public function login()
@@ -61,7 +62,7 @@ class Admin
             if ($user) {
                 $pass = Func::packPassword($password, $user->toekn);
                 if ($user->password == $pass) {
-                    AdministratorLoginCheck::restoreLogin($user->toArray());
+                    UserActive::restore($user->toArray());
                     return Redirect::to(ADMIN_URI);
                 }
             }

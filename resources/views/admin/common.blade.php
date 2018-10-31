@@ -153,19 +153,27 @@
 
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu" data-widget="tree">
-                <li class="active"><a href="http://www.blog.com/7A57A5A743894A0E/auth"><i class="fa fa-link"></i> <span>功能一</span></a></li>
-                <li><a href="#"><i class="fa fa-link"></i> <span>功能二</span></a></li>
-                <li class="treeview">
-                    <a href="#"><i class="fa fa-link"></i> <span>功能三</span>
-                        <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#">功能三 level 2</a></li>
-                        <li><a href="#">功能三 level 2</a></li>
-                    </ul>
-                </li>
+                @foreach($navigation as $navs)
+                    @if(sizeof($navs) > 1)
+                        <li class="treeview">
+                            <a href="#"><i class="fa fa-link"></i> <span>{{current($navs)['c_name']}}</span>
+                                <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                @foreach($navs as $nav)
+                                <li><a href="{{url(ADMIN_URI.'/'.$nav['slug'])}}">{{$nav['m_name']}}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+                    @else
+                        <li @if($slug == current($navs)['slug'])
+                                class="active"
+                            @endif
+                        ><a href="{{url(ADMIN_URI.'/'.current($navs)['slug'])}}"><i class="fa fa-link"></i> <span>{{current($navs)['m_name']}}</span></a></li>
+                    @endif
+                @endforeach
             </ul>
             <!-- /.sidebar-menu -->
         </section>

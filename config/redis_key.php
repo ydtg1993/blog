@@ -16,6 +16,9 @@ return [
 
     ],
     'hash'=>[
-        'administrator_status_token'=>'administrator_status_token'
+
+    ],
+    'active'=>[
+        'user'=>'user'
     ]
 ];
