@@ -24,12 +24,22 @@ class JinonoForum extends Model
     {
         $page-=$page;
         $start = $page * $limit;
-        return self::where($where)->offset($start)->limit($limit)->orderBy($order_by, $sort)->get();
+        $data = self::where($where)->offset($start)->limit($limit)->orderBy($order_by, $sort)->get();
+        if($data){
+            return $data->toArray();
+        }
+
+        return [];
     }
 
     public static function getAllWhere(array $where = [])
     {
-        return self::where($where)->get();
+        $data = self::where($where)->get();
+        if($data){
+            return $data->toArray();
+        }
+
+        return [];
     }
 
     /**

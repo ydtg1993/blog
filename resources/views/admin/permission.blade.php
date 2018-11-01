@@ -4,22 +4,23 @@
 
 @section('content')
 
-    @foreach($permissions as $permission)
+    <h3>{{$role['name']}}</h3>
+    @foreach($permissions as $controller =>$permission)
         <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">{{$controller}}</h3>
+            </div>
             <div class="box-body no-padding">
-                <table class="table table-striped">
+                <table class="table">
                     <tbody>
                     <tr>
-                        <th>id</th>
-                        <th>名称</th>
-                        <th>操作</th>
-                    </tr>
-                    <tr>
-                        <td>{{$permission['id']}}</td>
-                        <td>{{$role['name']}}</td>
                         <td>
-                            <a href="" type="button" class="btn btn-default btn-xs">绑定用户</a>
-                            <a href="" type="button" class="btn btn-default btn-xs">权限设置</a>
+                            @foreach($permission as $p)
+                            <div class="btn btn-default btn-flat">
+                                <input type="checkbox" data-permission-id="{{$p['id']}}" class="checkbox-inline" @if($p['isset'])checked="checked"@endif>
+                                {{$p['slug']}}
+                            </div>
+                            @endforeach
                         </td>
                     </tr>
                     </tbody>
@@ -28,4 +29,17 @@
         </div>
     @endforeach
 
+    <script>
+        $('input').click(function () {
+            requestEvent.url = '{{url(ADMIN_URI.'/Auth.roleBindUser')}}';
+
+            var role_id =
+            var permission_id = $(this).attr('data-permission-id');
+            requestEvent.data = [];
+            requestEvent.apply();
+
+        });
+
+
+    </script>
 @stop

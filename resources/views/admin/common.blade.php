@@ -19,6 +19,7 @@
     <script src="{{URL::asset('js/jquery.min.js')}}"></script>
     <script src="{{URL::asset('lib/adminle/dist/js/adminlte.min.js')}}"></script>
     <script src="{{URL::asset('lib/adminle/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{URL::asset('js/jinono.js')}}"></script>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">

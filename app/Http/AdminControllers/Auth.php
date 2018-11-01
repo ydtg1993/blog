@@ -27,11 +27,6 @@ class Auth extends Admin
 
         $list = [];
         $permission_infos = Permissions::getAllWhere();
-        if($permission_infos){
-            $permission_infos = $permission_infos->toArray();
-        }else{
-            $permission_infos = [];
-        }
 
         foreach ($controllers as $controller) {
             $class_name = str_replace('.php', '', basename($controller));
@@ -123,7 +118,7 @@ class Auth extends Admin
                 $data['c_name'] = self::$REQUEST->input('c_name');
                 $permission_info = Permissions::getInfoWhere(['id'=>$id]);
                 $permission_infos = Permissions::getAllWhere(['controller'=>$permission_info->controller]);
-                $ids = array_column($permission_infos->toArray(),'id');
+                $ids = array_column($permission_infos,'id');
                 Permissions::upInfoInWhere($data,$ids,'id');
                 return self::$RESPONSE->result(0);
             }
@@ -146,9 +141,6 @@ class Auth extends Admin
     {
         $roles = Roles::getAllWhere();
 
-        if($roles){
-            $roles = $roles->toArray();
-        }
         self::$data['roles'] = $roles;
         return view('admin/roles', self::$data);
     }
@@ -170,11 +162,6 @@ class Auth extends Admin
 
         $role_id = self::$REQUEST->route('role_id');
         $users = UserRole::getAllWhere(['role_id'=>$role_id]);
-        if($users){
-            $users = $users->toArray();
-        }else{
-            $users = [];
-        }
 
         self::$data['users'] = $users;
         return view('admin/role_bind_user', self::$data);
@@ -182,24 +169,36 @@ class Auth extends Admin
 
     public function permission()
     {
+        if(self::$REQUEST->ajax()){
+            $role_id = self::$REQUEST->input('role_id');
+            $user_id = self::$REQUEST->input('permission_id');
+            $command = self::$REQUEST->input('command');
+            if($command == 'add'){
+                UserRole::add(['role_id'=>$role_id,'user_id'=>$user_id]);
+            }elseif ($command == 'del'){
+                UserRole::delInfoWhere(['role_id'=>$role_id,'user_id'=>$user_id]);
+            }
+
+            return self::$RESPONSE->result(0);
+        }
         $role_id = self::$REQUEST->route('role_id');
+        self::$data['role'] = Roles::getInfoWhere(['id'=>$role_id]);
 
-        $permissions = Permissions::getAllWhere(['role_id'=>$role_id]);
-        if($permissions){
-            $permissions= $permissions->toArray();
-        }else{
-            $permissions = [];
+        $all_permissions = Permissions::getAllWhere();
+
+        $role_permissions = RolePermission::getAllWhere(['role_id'=>$role_id]);
+        $role_permission_ids = array_column($role_permissions,'permission_id');
+
+        $permissions = [];
+        foreach ($all_permissions as $permission){
+            $permission['isset'] = 0;
+            if(in_array($permission['id'],$role_permission_ids)){
+                $permission['isset'] = 1;
+            }
+            $permissions[$permission['controller']][] = $permission;
         }
-        $permission_ids = array_column($permissions,'permission_id');
 
-        $permissions = Permissions::getAllInIds([],$permission_ids);
-        if($permissions){
-            $permissions= $permissions->toArray();
-        }else{
-            $permissions = [];
-        }
-
-
+        self::$data['permissions'] = $permissions;
         return view('admin/permission', self::$data);
     }
 

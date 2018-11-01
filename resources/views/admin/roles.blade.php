@@ -19,7 +19,7 @@
                         <td>{{$role['name']}}</td>
                         <td>
                             <a href="{{url(ADMIN_URI.'/Auth.roleBindUser/'.$role['id'])}}" type="button" class="btn btn-default btn-xs">绑定用户</a>
-                            <a href="" type="button" class="btn btn-default btn-xs">权限设置</a>
+                            <a href="{{url(ADMIN_URI.'/Auth.permission/'.$role['id'])}}" type="button" class="btn btn-default btn-xs">权限设置</a>
                         </td>
                     </tr>
                     @endforeach

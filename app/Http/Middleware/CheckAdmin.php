@@ -44,10 +44,7 @@ class CheckAdmin
         $permission = Permissions::getInfoWhere(['slug'=>$slug]);
 
         $auths = RolePermission::getAllWhere(['role_id'=>$user_role->role_id]);
-        $auth_permission_ids = [];
-        if($auths){
-            $auth_permission_ids = array_column($auths->toArray(),'permission_id');
-        }
+        $auth_permission_ids = array_column($auths,'permission_id');
 
         if($permission){
             if(!in_array($permission->id,$auth_permission_ids)){
