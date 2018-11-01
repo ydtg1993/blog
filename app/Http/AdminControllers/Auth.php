@@ -171,12 +171,18 @@ class Auth extends Admin
     {
         if(self::$REQUEST->ajax()){
             $role_id = self::$REQUEST->input('role_id');
-            $user_id = self::$REQUEST->input('permission_id');
+            $permission_id = self::$REQUEST->input('permission_id');
             $command = self::$REQUEST->input('command');
+
+            $result = false;
             if($command == 'add'){
-                UserRole::add(['role_id'=>$role_id,'user_id'=>$user_id]);
+                $result = RolePermission::add(['role_id'=>$role_id,'permission_id'=>$permission_id]);
             }elseif ($command == 'del'){
-                UserRole::delInfoWhere(['role_id'=>$role_id,'user_id'=>$user_id]);
+                $result = RolePermission::delInfoWhere(['role_id'=>$role_id,'permission_id'=>$permission_id]);
+            }
+
+            if(!$result){
+                return self::$RESPONSE->result(5005);
             }
 
             return self::$RESPONSE->result(0);

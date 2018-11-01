@@ -22,4 +22,5 @@ $router->group(['middleware' => 'CheckAdminLogin'], function () use ($admin_url,
     $router->post($admin_url . '/Auth.roleBindUser', 'Auth@roleBindUser');
 
     $router->get($admin_url . '/Auth.permission/{role_id}', 'Auth@permission');
+    $router->post($admin_url . '/Auth.permission', 'Auth@permission');
 });

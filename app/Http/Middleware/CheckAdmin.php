@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Http\AdminControllers\Admin;
+use App\Http\Common\ResponseCode;
 use App\Http\Dao\UserActive;
 use App\Http\Model\Permissions;
 use App\Http\Model\RolePermission;
@@ -48,9 +49,15 @@ class CheckAdmin
 
         if($permission){
             if(!in_array($permission->id,$auth_permission_ids)){
+                if($request->ajax()){
+                    return ResponseCode::getInstance()->result(4004);
+                }
                 die('没有权限');
             }
         }else{
+            if($request->ajax()){
+                return ResponseCode::getInstance()->result(4004);
+            }
             die('需要超级管理员开通');
         }
 

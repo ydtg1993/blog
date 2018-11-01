@@ -39,41 +39,28 @@
             $('.form-control').blur(function () {
                 var id = $(this).parent().parent().attr('data-id');
                 var user_id = $(this).val();
-                $.ajax({
-                    type: 'POST',
-                    url: '{{url(ADMIN_URI.'/Auth.roleBindUser')}}',
-                    data: {
-                        '_token': '{{csrf_token()}}',
-                        'role_id': id,
-                        'user_id': user_id,
-                        'command': 'add',
-                    },
-                    success: function (d) {
-                        if(d.code == 0){
-                            window.location.reload();
-                        }
-                    }
-                });
+
+                var url = '{{url(ADMIN_URI.'/Auth.roleBindUser')}}';
+                var data = {
+                    '_token': '{{csrf_token()}}',
+                    'role_id': id,
+                    'user_id': user_id,
+                    'command': 'add',
+                };
+                requestEvent.apply(url,data);
             });
 
             $('.btn').click(function () {
                 var id = $(this).parent().parent().attr('data-id');
                 var user_id = $(this).attr('data-usr');
-                $.ajax({
-                    type: 'POST',
-                    url: '{{url(ADMIN_URI.'/Auth.roleBindUser')}}',
-                    data: {
-                        '_token': '{{csrf_token()}}',
+                var url = '{{url(ADMIN_URI.'/Auth.roleBindUser')}}';
+                var data = {
+                    '_token': '{{csrf_token()}}',
                         'role_id': id,
                         'user_id': user_id,
                         'command': 'del',
-                    },
-                    success: function (d) {
-                        if(d.code == 0){
-                            window.location.reload();
-                        }
-                    }
-                });
+                }
+                requestEvent.apply(url,data);
             });
         </script>
 @stop

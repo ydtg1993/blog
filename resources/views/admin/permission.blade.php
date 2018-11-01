@@ -31,15 +31,16 @@
 
     <script>
         $('input').click(function () {
-            requestEvent.url = '{{url(ADMIN_URI.'/Auth.roleBindUser')}}';
-
-            var role_id =
+            var is_check = $(this).prop("checked");
+            var command = 'del';
+            if(is_check){
+                command = 'add';
+            }
+            var url = '{{url(ADMIN_URI.'/Auth.permission')}}';
+            var role_id = '{{$role['id']}}';
             var permission_id = $(this).attr('data-permission-id');
-            requestEvent.data = [];
-            requestEvent.apply();
-
+            var data = {role_id:role_id,permission_id:permission_id,command:command,'_token': '{{csrf_token()}}'};
+            requestEvent.apply(url,data);
         });
-
-
     </script>
 @stop

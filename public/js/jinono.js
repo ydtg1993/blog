@@ -1,15 +1,15 @@
 var requestEvent = {
-    url: '',
-    data: {},
     type: 'POST',
-    apply: function () {
+    apply: function (url,data) {
         $.ajax({
             type: requestEvent.type,
-            url: requestEvent.url,
-            data: requestEvent.data,
+            url: url,
+            data: data,
             success: function (d) {
                 if (d.code == 0) {
                     window.location.reload();
+                }else {
+                    alert(d.msg);
                 }
             }
         });

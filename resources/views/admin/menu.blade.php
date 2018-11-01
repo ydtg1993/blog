@@ -50,23 +50,16 @@
             var description = $(this).parent().find('input[name="description"]').val();
             var view = $(this).parent().find('input[name="view"]').val();
 
-            $.ajax({
-                type: 'POST',
-                url: '{{url(ADMIN_URI.'/Auth.upMenu')}}',
-                data: {
-                    '_token': '{{csrf_token()}}',
-                    'id': id,
-                    'c_name': c_name,
-                    'm_name': m_name,
-                    'description': description,
-                    'view': view,
-                },
-                success: function (d) {
-                    if(d.code == 0){
-
-                    }
-                }
-            });
+            var url = '{{url(ADMIN_URI.'/Auth.upMenu')}}';
+            var data = {
+                '_token': '{{csrf_token()}}',
+                'id': id,
+                'c_name': c_name,
+                'm_name': m_name,
+                'description': description,
+                'view': view,
+            };
+            requestEvent.apply(url,data);
         });
     </script>
 @stop
