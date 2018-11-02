@@ -44,11 +44,11 @@ class CheckAdmin
         Admin::$data['slug'] = $slug;
         $permission = Permissions::getInfoWhere(['slug'=>$slug]);
 
-        $auths = RolePermission::getAllWhere(['role_id'=>$user_role->role_id]);
+        $auths = RolePermission::getAllWhere(['role_id'=>$user_role['role_id']]);
         $auth_permission_ids = array_column($auths,'permission_id');
 
         if($permission){
-            if(!in_array($permission->id,$auth_permission_ids)){
+            if(!in_array($permission['id'],$auth_permission_ids)){
                 if($request->ajax()){
                     return ResponseCode::getInstance()->result(4004);
                 }

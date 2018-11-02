@@ -60,9 +60,10 @@ class Admin
 
             $user = User::getInfoWhere(['account' => $account]);
             if ($user) {
-                $pass = Func::packPassword($password, $user->toekn);
-                if ($user->password == $pass) {
-                    UserActive::restore($user->toArray());
+                $pass = Func::packPassword($password, $user['token']);
+                if ($user['password'] != $pass) {
+                    UserActive::restore($user);
+
                     return Redirect::to(ADMIN_URI);
                 }
             }

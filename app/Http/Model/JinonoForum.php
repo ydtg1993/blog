@@ -48,7 +48,12 @@ class JinonoForum extends Model
      */
     public static function getInfoWhere(array $where = [])
     {
-        return self::where($where)->first();
+        $data = self::where($where)->first();
+        if($data){
+            return $data->toArray();
+        }
+
+        return [];
     }
 
     /**

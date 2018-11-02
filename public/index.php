@@ -9,6 +9,7 @@
 
 define('LARAVEL_START', microtime(true));
 define('TIME',time());
+define('NOW_DATE',date('Y-m-d H:i:s',TIME));
 define('PROJECT_ROOT_PATH',__DIR__);
 define('ADMIN_URI','7A57A5A743894A0E');
 /*

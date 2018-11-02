@@ -10,6 +10,7 @@ namespace App\Http\Dao;
 
 
 use App\Http\Common\RedisDriver;
+use App\Http\Model\User;
 use App\Libs\Helper\Func;
 use Illuminate\Support\Facades\Cookie;
 
@@ -22,14 +23,11 @@ class UserActive
      */
     public static function restore($user_info)
     {
-        $token = Func::createToken();
-        $data = json_encode([
-            'name' => $user_info['name'],
-            'token' => $token,
-        ]);
+        $active_token = Func::createToken();
 
-        Cookie::queue('user', $data, TIME + 86400);
-        $cache_key = RedisDriver::getInstance()->getCacheKey('active.user', $token);
+        Cookie::queue('active_token',$active_token,TIME + 86400);
+        $cache_key = RedisDriver::getInstance()->getCacheKey('active.user', $active_token);
+        User::upInfoInWhere(['last_login_time'=>NOW_DATE]);
         return (boolean)RedisDriver::getInstance()->redis->setex($cache_key, 3600, json_encode($user_info));
     }
 
@@ -40,12 +38,12 @@ class UserActive
      */
     public static function check(&$user_info)
     {
-        $info = (array)json_decode(Cookie::get('user'), true);
-        if (!isset($info ['token'])) {
+        $active_token = Cookie::get('active_token');
+        if (!$active_token) {
             return false;
         }
 
-        $cache_key = RedisDriver::getInstance()->getCacheKey('active.user', $info ['token']);
+        $cache_key = RedisDriver::getInstance()->getCacheKey('active.user', $active_token);
         $user_info = RedisDriver::getInstance()->redis->get($cache_key);
 
         if ($user_info == null) {
@@ -62,14 +60,14 @@ class UserActive
     }
 
     /**
-     * @param $token
      * @return bool
      * @throws \Exception
      */
-    public static function destroy($token)
+    public static function destroy()
     {
-        Cookie::forget('administrator');
-        $cache_key = RedisDriver::getInstance()->getCacheKey('active.user', $token);
+        $active_token = Cookie::get('active_token');
+        Cookie::forget('active_token');
+        $cache_key = RedisDriver::getInstance()->getCacheKey('active.user', $active_token);
         return (boolean)RedisDriver::getInstance()->redis->del($cache_key);
     }
 }
